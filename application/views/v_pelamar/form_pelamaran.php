@@ -3,8 +3,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
           <div class="col-md-8 ftco-animate text-center text-md-left mb-5">
-          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>New Job Post</span></p>
-            <h1 class="mb-3 bread">Tambahkan Lowongan</h1>
+          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_pelamar/HomePelamar">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Form Pelamaran</span></p>
+            <h1 class="mb-3 bread">Form Pelamaran</h1>
           </div>
         </div>
       </div>
