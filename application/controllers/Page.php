@@ -79,6 +79,40 @@ class Page extends CI_Controller
 
   function editDataPelamar()
   {
+    $id_pelamar = $this->input->post('id_pelamar');
+    $nama = $this->input->post('nama');
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
+    $tgl_lahir = $this->input->post('tgl_lahir');
+    $email = $this->input->post('email');
+    $alamat = $this->input->post('alamat');
+    $no_telp = $this->input->post('no_telp');
+    $lulusan = $this->input->post('lulusan');
+    $tinggi_bdn = $this->input->post('tinggi_bdn');
+    $berat_bdn = $this->input->post('berat_bdn');
+    $jenis_kelamin = $this->input->post('jenis_kelamin');
+
+    $data = array(
+      'nama' => $this->input->post('nama'),
+      'username' => $this->input->post('username'),
+      'password' => $this->input->post('password'),
+      'tgl_lahir' => $this->input->post('tgl_lahir'),
+      'email' => $this->input->post('email'),
+      'alamat' => $this->input->post('alamat'),
+      'no_telp' => $this->input->post('no_telp'),
+      'lulusan' => $this->input->post('lulusan'),
+      'tinggi_bdn' => $this->input->post('tinggi_bdn'),
+      'berat_bdn' => $this->input->post('berat_bdn'),
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'level' => 2
+    );
+
+    $where = array(
+      'id' => $id_pelamar
+    );
+
+    $this->m_data->update_data($where, $data, 'user');
+    redirect('crud/index');
   }
 
   //===========================================================================================================================//

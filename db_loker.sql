@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Mar 2020 pada 15.22
+-- Waktu pembuatan: 04 Apr 2020 pada 06.43
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `loker` (
   `id_loker` int(11) NOT NULL AUTO_INCREMENT,
   `nama_loker` varchar(50) NOT NULL,
   `gambar` varchar(50) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
   `kategori` varchar(50) NOT NULL,
   PRIMARY KEY (`id_loker`)
@@ -89,17 +90,17 @@ CREATE TABLE IF NOT EXISTS `loker` (
 -- Dumping data untuk tabel `loker`
 --
 
-INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `deskripsi`, `kategori`) VALUES
-(1, 'multimeda', 'gambar.jpg', 'Desain-Desain', 'full time'),
-(2, 'Advertising', 'gambar.jpg', 'periklanan', 'part time'),
-(3, 'Sosial Media', 'gambar.jpg', 'sosial human', 'full time'),
-(4, 'Office & Admin', 'gambar.jpg', 'pengelola data basis', 'part time'),
-(5, 'Education & Training', 'gambar.jpg', 'pelatihan', 'part time'),
-(6, 'Project Management', 'gambar.jpg', 'memimpin project', 'full time'),
-(7, 'PHP Programming', 'gambar.jpg', 'membuat program', 'magang'),
-(8, 'Marketing & Sales', 'gambar.jpg', 'pemasaran', 'freelance'),
-(9, 'Costumer Service', 'gambar.jpg', 'pelayanan', 'part time'),
-(10, 'Writing', 'gambar.jpg', 'menulis', 'sementara');
+INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat`, `deskripsi`, `kategori`) VALUES
+(1, 'multimeda', 'gambar.jpg', 'surabaya', 'Desain-Desain', 'full time'),
+(2, 'Advertising', 'gambar.jpg', 'pasuruan', 'periklanan', 'part time'),
+(3, 'Sosial Media', 'gambar.jpg', 'jember', 'sosial human', 'full time'),
+(4, 'Office & Admin', 'gambar.jpg', 'sidoarjo', 'pengelola data basis', 'part time'),
+(5, 'Education & Training', 'gambar.jpg', 'malang', 'pelatihan', 'part time'),
+(6, 'Project Management', 'gambar.jpg', 'mojokerto', 'memimpin project', 'full time'),
+(7, 'PHP Programming', 'gambar.jpg', 'surabaya', 'membuat program', 'magang'),
+(8, 'Marketing & Sales', 'gambar.jpg', 'malang', 'pemasaran', 'freelance'),
+(9, 'Costumer Service', 'gambar.jpg', 'probolinggo', 'pelayanan', 'part time'),
+(10, 'Writing', 'gambar.jpg', 'malang', 'menulis', 'sementara');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `reg_pelamar` (
   `jenis_kelamin` varchar(15) NOT NULL,
   `level` int(3) NOT NULL,
   PRIMARY KEY (`id_pelamar`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `reg_pelamar`
@@ -133,7 +134,8 @@ CREATE TABLE IF NOT EXISTS `reg_pelamar` (
 INSERT INTO `reg_pelamar` (`id_pelamar`, `foto_profil`, `nama`, `username`, `password`, `tgl_lahir`, `email`, `alamat`, `no_telp`, `lulusan`, `tinggi_bdn`, `berat_bdn`, `jenis_kelamin`, `level`) VALUES
 (1, 'profil.jpg', 'ega', 'ega', '123', '2020-03-04', 'ega@gmail.com', 'bojonegoro', 88888888, 'SMA', 160, 50, 'Laki-Laki', 2),
 (12, 'mukti.jpeg', 'mukti', 'mukti', '123', '2020-01-01', 'mukti@gmail.com', 'bojonegoro', 22222222, 'S1', 47, 50, 'laki laki', 2),
-(13, 'fikri.jpg', 'fikri', 'fikri', '123', '2000-09-01', 'fikri@gmail.com', 'pasuruan', 888811181, 'S2', 65, 43, 'perempuan', 2);
+(13, 'fikri.jpg', 'fikri', 'fikri', '123', '2000-09-01', 'fikri@gmail.com', 'pasuruan', 888811181, 'S2', 65, 43, 'perempuan', 2),
+(14, 'viki.jpg', 'viki', 'viki', '123', '2020-01-01', 'viki@gmail.com', 'pasuruan , jl.MT HARYONO', 2222222, 'D3', 27, 41, 'laki laki', 2);
 
 -- --------------------------------------------------------
 
