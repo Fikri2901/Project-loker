@@ -36,6 +36,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home</a>
                     </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_profile_perusahaan">Profil</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_about">About</a>
                     </li>
@@ -55,6 +58,3 @@
             </div>
         </div>
     </nav>
-    <!-- END nav -->
-
-    <!--    <a href="<?php echo site_url($link); ?>">link ini</a>-->
