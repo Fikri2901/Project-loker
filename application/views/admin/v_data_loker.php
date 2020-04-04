@@ -22,6 +22,7 @@
               <th>No</th>
               <th>Nama Loker</th>
               <th>Gambar</th>
+              <th>Alamat</th>
               <th>Deskripsi</th>
               <th>Kategori</th>
               <th>Action</th>
@@ -36,6 +37,7 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $lkr->nama_loker ?></td>
                 <td><?php echo $lkr->gambar ?></td>
+                <td><?php echo $lkr->alamat ?></td>
                 <td><?php echo $lkr->deskripsi ?></td>
                 <td><?php echo $lkr->kategori ?></td>
                 <td>

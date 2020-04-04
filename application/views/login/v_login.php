@@ -24,7 +24,7 @@
           <div class="signin-image">
             <figure><img src="<?php echo base_url() . 'asset/login/images/signin-image.jpg' ?>" alt="sing up image"></figure>
 
-            <a href="#" class="signup-image-link">Create applicant account</a>
+            <a href="<?php echo base_url(); ?>registrasiPelamar" class="signup-image-link">Create applicant account</a>
             <a href="#" class="signup-image-link">Create a company account</a>
 
           </div>
