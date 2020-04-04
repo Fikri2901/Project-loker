@@ -6,7 +6,7 @@
 			<div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
 				<div class="text mt-5">
 					<p class="mb-4 mt-5 pt-5">Kita Mempunyai <span class="number" data-number="184652">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
-					<h1 class="mb-2">Menargetkan Perkerjaan di Jawa Timuraaa</h1>
+					<h1 class="mb-2">Menargetkan Perkerjaan di Jawa Timur</h1>
 
 					<div class="ftco-search">
 						<div class="row">
@@ -23,26 +23,28 @@
 								<div class="tab-content p-4" id="v-pills-tabContent">
 
 									<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-										<form action="<?php echo base_url('search/search_keyword'); ?>" method="post" class="search-job">
-											<div class="row no-gutters">
-												<div class="col-md mr-md-2">
-													<div class="form-group">
-														<div class="form-field">
-															<div class="icon"><span class="icon-briefcase"></span></div>
-															<input type="text" name="keyword" class="form-control" placeholder="Cari pekerjaan">
-														</div>
-													</div>
-												</div>
 
-												<div class="col-md">
-													<div class="form-group">
-														<div class="form-field">
-															<button type="submit" value="Search" class="form-control btn btn-secondary">Cari</button>
-														</div>
+										<?php echo form_open('HomeControl/search') ?>
+										<div class="row no-gutters">
+											<div class="col-md mr-md-2">
+												<div class="form-group">
+													<div class="form-field">
+
+														<input type="text" name="keyword" class="form-control" placeholder="Cari pekerjaan">
 													</div>
 												</div>
 											</div>
-										</form>
+
+											<div class="col-md">
+												<div class="form-group">
+													<div class="form-field">
+														<button type="submit" value="Search" name="search_submit" class="form-control btn btn-secondary">Cari</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<?php echo form_close() ?>
+
 									</div>
 								</div>
 							</div>
@@ -170,7 +172,7 @@
 		</div>
 	</div>
 </section>
-<<<<<<< HEAD <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url('<?php echo base_url(); ?>/asset/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url('<?php echo base_url(); ?>/asset/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-12">
@@ -223,6 +225,4 @@
 			</div>
 		</div>
 	</div>
-	</section>
-	=======
-	>>>>>>> 86b2446510c92db7776dce14d84c48771fe40cc2
+</section>

@@ -28,7 +28,7 @@ class HomeControl extends CI_Controller
 
         $data['title'] = 'JOBBLY - Home';
         $this->load->view('header', $data);
-        $this->load->view('home_search');
+        $this->load->view('home_search', $data);
         $this->load->view('footer');
     }
 }

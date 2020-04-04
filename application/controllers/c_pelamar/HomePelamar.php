@@ -8,6 +8,7 @@ class HomePelamar extends CI_Controller
         parent::__construct();
 
         $this->load->model('loker_model');
+        $this->load->helper('form');
     }
 
     public function index()
@@ -17,5 +18,16 @@ class HomePelamar extends CI_Controller
         $this->load->view('v_pelamar/header', $data);
         $this->load->view('v_pelamar/home');
         $this->load->view('v_pelamar/footer');
+    }
+
+    public function search()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['loker'] = $this->loker_model->getLokerKeyword($keyword);
+
+        $data['title'] = 'JOBBLY - Home';
+        $this->load->view('header', $data);
+        $this->load->view('home_search', $data);
+        $this->load->view('footer');
     }
 }

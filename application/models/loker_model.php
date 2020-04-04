@@ -13,7 +13,8 @@ class loker_model extends CI_Model
         $this->db->select('*');
         $this->db->from('loker');
         $this->db->like('nama_loker', $keyword);
-        // $this->db->or_like('harga', $keyword);
+        $this->db->or_like('kategori', $keyword);
+        $this->db->or_like('alamat', $keyword);
         return $this->db->get()->result();
     }
 }

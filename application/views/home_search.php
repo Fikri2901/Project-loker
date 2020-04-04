@@ -5,8 +5,7 @@
 			<img class="one-third align-self-end order-md-last img-fluid" src="<?php echo base_url(); ?>asset/images/undraw_work_time_lhoj.svg" alt="">
 			<div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
 				<div class="text mt-5">
-					<h2><b>Hai , <?php echo $this->session->userdata('ses_nama'); ?> Selamat Datang di Jobpply :)</b></h2>
-					<p class="mb-2 mt-1 pt-3">Kita Mempunyai <span class="number" data-number="184652">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
+					<p class="mb-4 mt-5 pt-5">Kita Mempunyai <span class="number" data-number="184652">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
 					<h1 class="mb-2">Menargetkan Perkerjaan di Jawa Timur</h1>
 
 					<div class="ftco-search">
@@ -24,11 +23,13 @@
 								<div class="tab-content p-4" id="v-pills-tabContent">
 
 									<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-										<?php echo form_open('c_pelamar/HomePelamar/search') ?>
+
+										<?php echo form_open('HomeControl/search') ?>
 										<div class="row no-gutters">
 											<div class="col-md mr-md-2">
 												<div class="form-group">
 													<div class="form-field">
+
 														<input type="text" name="keyword" class="form-control" placeholder="Cari pekerjaan">
 													</div>
 												</div>
@@ -37,12 +38,13 @@
 											<div class="col-md">
 												<div class="form-group">
 													<div class="form-field">
-														<button type="submit" value="Search" name="search_submit" class="form-control btn btn-secondary">Cari</button>
+														<button type="submit" value="Search" class="form-control btn btn-secondary">Cari</button>
 													</div>
 												</div>
 											</div>
 										</div>
 										<?php echo form_close() ?>
+
 									</div>
 								</div>
 							</div>
@@ -112,7 +114,7 @@
 							<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
 								<div class="one-third mb-4 mb-md-0">
 									<div class="job-post-item-header d-flex align-items-center">
-										<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>c_pelamar/c_single_job"><?php echo $lkr->nama_loker ?></a></h2>
+										<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $lkr->nama_loker ?></a></h2>
 										<div class="badge-wrap">
 											<span class="bg-primary text-white badge py-2 px-3"><?php echo $lkr->kategori ?></span>
 										</div>
@@ -124,7 +126,7 @@
 								</div>
 
 								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="<?php echo base_url(); ?>c_pelamar/c_form_pelamaran" class="btn btn-primary py-2">Apply Job</a>
+									<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
 								</div>
 							</div>
 						</div><!-- end -->
@@ -163,6 +165,60 @@
 						<div class="text p-3">
 							<h3><a href="#">IT Programming INC</a></h3>
 							<p><span class="number">700</span> <span>Open position</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url('<?php echo base_url(); ?>/asset/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 text-center">
+							<div class="text">
+								<div class="icon">
+									<span class="flaticon-employee"></span>
+								</div>
+								<strong class="number" data-number="435000">0</strong>
+								<span>Jobs</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 text-center">
+							<div class="text">
+								<div class="icon">
+									<span class="flaticon-collaboration"></span>
+								</div>
+								<strong class="number" data-number="40000">0</strong>
+								<span>Members</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 text-center">
+							<div class="text">
+								<div class="icon">
+									<span class="flaticon-resume"></span>
+								</div>
+								<strong class="number" data-number="30000">0</strong>
+								<span>Resume</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18 text-center">
+							<div class="text">
+								<div class="icon">
+									<span class="flaticon-promotions"></span>
+								</div>
+								<strong class="number" data-number="10500">0</strong>
+								<span>Company</span>
+							</div>
 						</div>
 					</div>
 				</div>
