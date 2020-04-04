@@ -4,7 +4,7 @@
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">About</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <p>Anda dapat menemukan informasi terbaru mengenai kami pada website ini. JOBBLY terus berkembang dan berevolusi. Kami menyediakan beragam layanan. Misi kami adalah menyediakan Solusi Career terbaik yang dapat membantu semua orang..</p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -14,38 +14,30 @@
       </div>
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Employers</h2>
+          <h2 class="ftco-heading-2">Perusahaan</h2>
           <ul class="list-unstyled">
-            <li><a href="#" class="py-2 d-block">How it works</a></li>
-            <li><a href="#" class="py-2 d-block">Register</a></li>
-            <li><a href="#" class="py-2 d-block">Post a Job</a></li>
-            <li><a href="#" class="py-2 d-block">Advance Skill Search</a></li>
-            <li><a href="#" class="py-2 d-block">Recruiting Service</a></li>
-            <li><a href="#" class="py-2 d-block">Blog</a></li>
-            <li><a href="#" class="py-2 d-block">Faq</a></li>
+            <li><a href="<?php echo base_url(); ?>Login" class="py-2 d-block">Register</a></li>
+            <li><a href="<?php echo base_url(); ?>c_perusahaan/new_post" class="py-2 d-block">Tambah Loker</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md">
         <div class="ftco-footer-widget mb-4 ml-md-4">
-          <h2 class="ftco-heading-2">Workers</h2>
+          <h2 class="ftco-heading-2">Pelamar</h2>
           <ul class="list-unstyled">
-            <li><a href="#" class="py-2 d-block">How it works</a></li>
-            <li><a href="#" class="py-2 d-block">Register</a></li>
-            <li><a href="#" class="py-2 d-block">Post Your Skills</a></li>
-            <li><a href="#" class="py-2 d-block">Job Search</a></li>
-            <li><a href="#" class="py-2 d-block">Emploer Search</a></li>
+            <li><a href="<?php echo base_url(); ?>Login" class="py-2 d-block">Register</a></li>
+            <li><a href="<?php echo base_url(); ?>Login" class="py-2 d-block">Lihat Lowongan Pekerjaan</a></li>
           </ul>
         </div>
       </div>
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Have a Questions?</h2>
+          <h2 class="ftco-heading-2">Ada pertanyaan?</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+              <li><span class="icon icon-map-marker"></span><span class="text">Jl. MT Haryono Gg.22 no.11 Rt.05 Rw.05 Tegal Arum Kota Pasuruan</span></li>
+              <li><span class="icon icon-phone"></span><span class="text">+6283833424784</span></a></li>
+              <li><span class="icon icon-envelope"></span><span class="text">jobpply@jobpply.com</span></a></li>
             </ul>
           </div>
         </div>
@@ -88,7 +80,7 @@
 <script src="<?php echo base_url(); ?>asset/js/google-map.js"></script>
 <script src="<?php echo base_url(); ?>asset/js/main.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src=""></script>
 
 </body>
 
