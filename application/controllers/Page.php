@@ -73,46 +73,140 @@ class Page extends CI_Controller
 
   function editPelamar($id)
   {
-    $data['pelamar'] = $this->pelamar_model->GetPelamarById($id);
+    $where = array('id_pelamar' => $id);
+    $data['pelamar'] = $this->pelamar_model->edit_TampilPelamar($where, 'reg_pelamar')->result();
     $this->load->view('admin/edit/v_edit_pelamar', $data);
   }
 
   function editDataPelamar()
   {
-    $id_pelamar = $this->input->post('id_pelamar');
-    $nama = $this->input->post('nama');
-    $username = $this->input->post('username');
-    $password = $this->input->post('password');
-    $tgl_lahir = $this->input->post('tgl_lahir');
-    $email = $this->input->post('email');
-    $alamat = $this->input->post('alamat');
-    $no_telp = $this->input->post('no_telp');
-    $lulusan = $this->input->post('lulusan');
-    $tinggi_bdn = $this->input->post('tinggi_bdn');
-    $berat_bdn = $this->input->post('berat_bdn');
-    $jenis_kelamin = $this->input->post('jenis_kelamin');
+    $id = $this->input->post('id');
+    $data = $this->pelamar_model->GetPelamarById($id);
+    $nama = './foto_pelamar/ ' . $data->foto_profil;
 
-    $data = array(
-      'nama' => $this->input->post('nama'),
-      'username' => $this->input->post('username'),
-      'password' => $this->input->post('password'),
-      'tgl_lahir' => $this->input->post('tgl_lahir'),
-      'email' => $this->input->post('email'),
-      'alamat' => $this->input->post('alamat'),
-      'no_telp' => $this->input->post('no_telp'),
-      'lulusan' => $this->input->post('lulusan'),
-      'tinggi_bdn' => $this->input->post('tinggi_bdn'),
-      'berat_bdn' => $this->input->post('berat_bdn'),
-      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-      'level' => 2
-    );
+    if (is_readable($nama) && unlink($nama)) {
 
-    $where = array(
-      'id' => $id_pelamar
-    );
+      $foto = $this->input->post('nama');
 
-    $this->m_data->update_data($where, $data, 'user');
-    redirect('crud/index');
+      $config['upload_path']          = './foto_pelamar';
+      $config['allowed_types']        = 'jpg|png|jpeg';
+      $config['max_size']             = 5024;
+      $config['file_name']            = $foto;
+
+      $this->load->library('upload', $config);
+
+      if (!$this->upload->do_upload('foto')) {
+        $error =  $this->upload->display_errors();
+        echo $error;
+      }
+
+      $upload_data = $this->upload->data();
+      $file_name = $upload_data['file_name'];
+
+      $data = array(
+        'foto_profil' => $file_name,
+        'nama' => $this->input->post('nama'),
+        'username' => $this->input->post('username'),
+        'password' => $this->input->post('password'),
+        'tgl_lahir' => $this->input->post('tgl_lahir'),
+        'email' => $this->input->post('email'),
+        'alamat' => $this->input->post('alamat'),
+        'no_telp' => $this->input->post('no_telp'),
+        'lulusan' => $this->input->post('lulusan'),
+        'tinggi_bdn' => $this->input->post('tinggi_bdn'),
+        'berat_bdn' => $this->input->post('berat_bdn'),
+        'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+        'level' => 2
+      );
+
+      $where = array(
+        'id_pelamar' => $id
+      );
+
+      $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
+
+      $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
+
+      if ($this->session->userdata('akses') == '1') {
+        $this->load->view('admin/v_data_pelamar', $data);
+      } else {
+        echo "Anda tidak berhak mengakses halaman ini";
+      }
+    } else {
+
+      // $data = array(
+      //   'nama' => $this->input->post('nama'),
+      //   'username' => $this->input->post('username'),
+      //   'password' => $this->input->post('password'),
+      //   'tgl_lahir' => $this->input->post('tgl_lahir'),
+      //   'email' => $this->input->post('email'),
+      //   'alamat' => $this->input->post('alamat'),
+      //   'no_telp' => $this->input->post('no_telp'),
+      //   'lulusan' => $this->input->post('lulusan'),
+      //   'tinggi_bdn' => $this->input->post('tinggi_bdn'),
+      //   'berat_bdn' => $this->input->post('berat_bdn'),
+      //   'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      //   'level' => 2
+      // );
+
+      // $where = array(
+      //   'id_pelamar' => $id
+      // );
+
+      // $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
+
+      // $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
+
+      // if ($this->session->userdata('akses') == '1') {
+      //   $this->load->view('admin/v_data_pelamar', $data);
+      // } else {
+      //   echo "Anda tidak berhak mengakses halaman ini";
+      // }
+    }
+
+
+
+
+    // $nama = $this->input->post('nama');
+    // $username = $this->input->post('username');
+    // $password = $this->input->post('password');
+    // $tgl_lahir = $this->input->post('tgl_lahir');
+    // $email = $this->input->post('email');
+    // $alamat = $this->input->post('alamat');
+    // $no_telp = $this->input->post('no_telp');
+    // $lulusan = $this->input->post('lulusan');
+    // $tinggi_bdn = $this->input->post('tinggi_bdn');
+    // $berat_bdn = $this->input->post('berat_bdn');
+    // $jenis_kelamin = $this->input->post('jenis_kelamin');
+
+    // $data = array(
+    //   'nama' => $nama,
+    //   'username' => $username,
+    //   'password' => $password,
+    //   'tgl_lahir' => $tgl_lahir,
+    //   'email' => $email,
+    //   'alamat' => $alamat,
+    //   'no_telp' => $no_telp,
+    //   'lulusan' => $lulusan,
+    //   'tinggi_bdn' => $tinggi_bdn,
+    //   'berat_bdn' => $berat_bdn,
+    //   'jenis_kelamin' => $jenis_kelamin,
+    //   'level' => 2
+    // );
+
+    // $where = array(
+    //   'id_pelamar' => $id
+    // );
+
+    // $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
+
+    // $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
+
+    // if ($this->session->userdata('akses') == '1') {
+    //   $this->load->view('admin/v_data_pelamar', $data);
+    // } else {
+    //   echo "Anda tidak berhak mengakses halaman ini";
+    // }
   }
 
   //===========================================================================================================================//

@@ -61,6 +61,17 @@ class pelamar_model extends CI_Model
         // }
     }
 
+    function edit_TampilPelamar($where, $table)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
+    function updateDataPelamar($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
+
     public function deletePelamar($id)
     {
         $_id = $this->db->get_where('reg_pelamar', ['id_pelamar' => $id])->row();
@@ -68,5 +79,14 @@ class pelamar_model extends CI_Model
         if ($query) {
             unlink("foto_pelamar/" . $_id->foto_profil);
         }
+    }
+
+    public function getPelamarKeyword($keyword)
+    {
+        $this->db->select('*');
+        $this->db->from('loker');
+        $this->db->like('nama_loker', $keyword);
+        // $this->db->or_like('harga', $keyword);
+        return $this->db->get()->result();
     }
 }
