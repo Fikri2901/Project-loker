@@ -3,8 +3,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
           <div class="col-md-8 ftco-animate text-center text-md-left mb-5">
-          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_pelamar/HomePelamar">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Job Posts</span></p>
-            <h1 class="mb-3 bread">Apply Jobs</h1>
+          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Job Posts</span></p>
+            <h1 class="mb-3 bread">List Loker *Nama Perusahaan e*</h1>
           </div>
         </div>
       </div>
@@ -86,41 +86,6 @@
 						</div><!-- end -->
 					<?php } ?>
 					<!--  -->
-				</div>
-			</div>
-			<div class="col-lg-3 sidebar">
-				<div class="row justify-content-center pb-3">
-					<div class="col-md-12 heading-section ftco-animate">
-						<span class="subheading">Recruitment agencies</span>
-						<h2 class="mb-4">Top Recruitments</h2>
-					</div>
-				</div>
-				<div class="sidebar-box ftco-animate">
-					<div class="border">
-						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/asset/images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-						<div class="text p-3">
-							<h3><a href="#">Google Company</a></h3>
-							<p><span class="number">500</span> <span>Open position</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-box ftco-animate">
-					<div class="border">
-						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/asset/images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-						<div class="text p-3">
-							<h3><a href="#">Facebook Company</a></h3>
-							<p><span class="number">700</span> <span>Open position</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-box ftco-animate">
-					<div class="border">
-						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/asset/images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-						<div class="text p-3">
-							<h3><a href="#">IT Programming INC</a></h3>
-							<p><span class="number">700</span> <span>Open position</span></p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

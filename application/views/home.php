@@ -23,13 +23,13 @@
 								<div class="tab-content p-4" id="v-pills-tabContent">
 
 									<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-										<form action="#" class="search-job">
+										<form action="<?php echo base_url('search/search_keyword');?>" method="post" class="search-job">
 											<div class="row no-gutters">
 												<div class="col-md mr-md-2">
 													<div class="form-group">
 														<div class="form-field">
 															<div class="icon"><span class="icon-briefcase"></span></div>
-															<input type="text" class="form-control" placeholder="Cari pekerjaan">
+															<input type="text" name="keyword" class="form-control" placeholder="Cari pekerjaan">
 														</div>
 													</div>
 												</div>
@@ -37,7 +37,7 @@
 												<div class="col-md">
 													<div class="form-group">
 														<div class="form-field">
-															<button type="submit" class="form-control btn btn-secondary">Cari</button>
+															<button type="submit" value="Search" class="form-control btn btn-secondary">Cari</button>
 														</div>
 													</div>
 												</div>
@@ -112,7 +112,7 @@
 							<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
 								<div class="one-third mb-4 mb-md-0">
 									<div class="job-post-item-header d-flex align-items-center">
-										<h2 class="mr-3 text-black"><a href="#"><?php echo $lkr->nama_loker ?></a></h2>
+										<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>Login"><?php echo $lkr->nama_loker ?></a></h2>
 										<div class="badge-wrap">
 											<span class="bg-primary text-white badge py-2 px-3"><?php echo $lkr->kategori ?></span>
 										</div>

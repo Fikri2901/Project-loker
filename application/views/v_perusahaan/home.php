@@ -9,46 +9,7 @@
 					<p class="mb-2 mt-1 pt-3">Kita Mempunyai <span class="number" data-number="184652">0</span> tawaran pekerjaan hebat yang pantas Anda dapatkan</p>
 					<h1 class="mb-2">Menargetkan Perkerjaan di Jawa Timur</h1>
 
-					<div class="ftco-search">
-						<div class="row">
-							<div class="col-md-12 nav-link-wrap">
-								<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-									<a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Cari Pekerjaan</a>
-
-									<!--<a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>-->
-
-								</div>
-							</div>
-							<div class="col-md-12 tab-wrap">
-
-								<div class="tab-content p-4" id="v-pills-tabContent">
-
-									<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-										<form action="#" class="search-job">
-											<div class="row no-gutters">
-												<div class="col-md mr-md-2">
-													<div class="form-group">
-														<div class="form-field">
-															<div class="icon"><span class="icon-briefcase"></span></div>
-															<input type="text" class="form-control" placeholder="Cari pekerjaan">
-														</div>
-													</div>
-												</div>
-												
-												<div class="col-md">
-													<div class="form-group">
-														<div class="form-field">
-															<button type="submit" class="form-control btn btn-secondary">Cari</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -91,80 +52,6 @@
 					<div class="media-body">
 						<h3 class="heading mb-3">Calon Pakar Pencarian</h3>
 						<p>Perusahaan dapat dengan mudah untuk mencari pekerja dengan ketentuan yang sudah diberikan.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="ftco-section bg-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-9 pr-lg-5">
-				<div class="row justify-content-center pb-3">
-					<div class="col-md-12 heading-section ftco-animate">
-						<h2 class="mb-4">Daftar Pekerjaan</h2>
-					</div>
-				</div>
-				<div class="row">
-					<?php foreach ($loker as $lkr) { ?>
-						<div class="col-md-12 ftco-animate">
-							<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
-								<div class="one-third mb-4 mb-md-0">
-									<div class="job-post-item-header d-flex align-items-center">
-										<h2 class="mr-3 text-black"><a href="#"><?php echo $lkr->nama_loker ?></a></h2>
-										<div class="badge-wrap">
-											<span class="bg-primary text-white badge py-2 px-3"><?php echo $lkr->kategori ?></span>
-										</div>
-									</div>
-									<div class="job-post-item-body d-block d-md-flex">
-										<div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
-										<div><span class="icon-my_location"></span> <span><?php echo $lkr->alamat ?></span></div>
-									</div>
-								</div>
-
-								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="<?php echo base_url(); ?>Login" class="btn btn-primary py-2">Apply Job</a>
-								</div>
-							</div>
-						</div><!-- end -->
-					<?php } ?>
-					<!--  -->
-				</div>
-			</div>
-			<div class="col-lg-3 sidebar">
-				<div class="row justify-content-center pb-3">
-					<div class="col-md-12 heading-section ftco-animate">
-						<span class="subheading">Recruitment agencies</span>
-						<h2 class="mb-4">Top Recruitments</h2>
-					</div>
-				</div>
-				<div class="sidebar-box ftco-animate">
-					<div class="border">
-						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/asset/images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-						<div class="text p-3">
-							<h3><a href="#">Google Company</a></h3>
-							<p><span class="number">500</span> <span>Open position</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-box ftco-animate">
-					<div class="border">
-						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/asset/images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-						<div class="text p-3">
-							<h3><a href="#">Facebook Company</a></h3>
-							<p><span class="number">700</span> <span>Open position</span></p>
-						</div>
-					</div>
-				</div>
-				<div class="sidebar-box ftco-animate">
-					<div class="border">
-						<a href="#" class="company-wrap"><img src="<?php echo base_url(); ?>/asset/images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
-						<div class="text p-3">
-							<h3><a href="#">IT Programming INC</a></h3>
-							<p><span class="number">700</span> <span>Open position</span></p>
-						</div>
 					</div>
 				</div>
 			</div>

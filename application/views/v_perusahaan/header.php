@@ -45,6 +45,9 @@
                     <li class="nav-item cta mr-md-1">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/new_post">Tambahkan Loker</a>
                     </li>
+					<li class="nav-item cta cta-colored">
+                        <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_list">List Loker</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>Login/logout">Logout</a>
                     </li>

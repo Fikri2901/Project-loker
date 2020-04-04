@@ -11,7 +11,6 @@ class HomeControl extends CI_Controller
         $this->load->model('loker_model');
     }
 
-
     public function index()
     {
         $data['loker'] = $this->loker_model->GetLoker()->result();
