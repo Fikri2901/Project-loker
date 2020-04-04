@@ -14,7 +14,7 @@
 								<div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 									<a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Cari Pekerjaan</a>
 
-									<!--									<a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>-->
+									<!--<a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>-->
 
 								</div>
 							</div>
@@ -33,31 +33,7 @@
 														</div>
 													</div>
 												</div>
-												<div class="col-md mr-md-2">
-													<div class="form-group">
-														<div class="form-field">
-															<div class="select-wrap">
-																<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-																<select name="" id="" class="form-control">
-																	<option value="">Kategori</option>
-																	<option value="">Full Time</option>
-																	<option value="">Part Time</option>
-																	<option value="">Freelance</option>
-																	<option value="">Magang</option>
-																	<option value="">Sementara</option>
-																</select>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col-md mr-md-2">
-													<div class="form-group">
-														<div class="form-field">
-															<div class="icon"><span class="icon-map-marker"></span></div>
-															<input type="text" class="form-control" placeholder="Lokasi">
-														</div>
-													</div>
-												</div>
+												
 												<div class="col-md">
 													<div class="form-group">
 														<div class="form-field">
