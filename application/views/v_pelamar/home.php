@@ -112,19 +112,19 @@
 							<div class="job-post-item py-4 d-block d-lg-flex align-items-center">
 								<div class="one-third mb-4 mb-md-0">
 									<div class="job-post-item-header d-flex align-items-center">
-										<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>c_pelamar/c_single_job"><?php echo $lkr->nama_loker ?></a></h2>
+										<h2 class="mr-3 text-black"><a href="<?php echo base_url(); ?>c_pelamar/c_single_job/index/<?php echo $lkr->id_loker ?>"><?php echo $lkr->nama_loker ?></a></h2>
 										<div class="badge-wrap">
 											<span class="bg-primary text-white badge py-2 px-3"><?php echo $lkr->kategori ?></span>
 										</div>
 									</div>
 									<div class="job-post-item-body d-block d-md-flex">
-										<div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
+										<!-- <div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div> -->
 										<div><span class="icon-my_location"></span> <span><?php echo $lkr->alamat ?></span></div>
 									</div>
 								</div>
 
 								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="<?php echo base_url(); ?>c_pelamar/c_form_pelamaran" class="btn btn-primary py-2">Apply Job</a>
+									<a href="<?php echo base_url(); ?>c_pelamar/c_form_pelamaran/index/<?php echo $lkr->id_loker ?>" class="btn btn-primary py-2">Apply Job</a>
 								</div>
 							</div>
 						</div><!-- end -->

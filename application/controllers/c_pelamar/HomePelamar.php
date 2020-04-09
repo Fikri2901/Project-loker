@@ -26,8 +26,19 @@ class HomePelamar extends CI_Controller
         $data['loker'] = $this->loker_model->getLokerKeyword($keyword);
 
         $data['title'] = 'JOBBLY - Home';
-        $this->load->view('header', $data);
-        $this->load->view('home_search', $data);
-        $this->load->view('footer');
+        $this->load->view('v_pelamar/header', $data);
+        $this->load->view('v_pelamar/home_search', $data);
+        $this->load->view('v_pelamar/footer');
+    }
+
+    public function searchh()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['loker'] = $this->loker_model->getLokerKeyword($keyword);
+
+        $data['title'] = 'JOBBLY - Home';
+        $this->load->view('v_pelamar/header', $data);
+        $this->load->view('v_pelamar/job_postSearch', $data);
+        $this->load->view('v_pelamar/footer');
     }
 }

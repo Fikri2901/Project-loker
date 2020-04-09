@@ -15,16 +15,14 @@
     <!--Include menu-->
     <div class="col-md-12">
       <div class="row">
-        <h2>Data Loker</h2>
+        <h2>Data Loker</h2> <a href="<?php echo base_url(); ?>index.php/Page/tambahLoker" class="btn btn-primary">Tambah</a> <br><br>
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>No</th>
-              <th>Nama Loker</th>
               <th>Gambar</th>
+              <th>Nama Loker</th>
               <th>Alamat</th>
-              <th>Deskripsi</th>
-              <th>Kategori</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -35,15 +33,15 @@
             ?>
               <tr>
                 <td><?php echo $no++ ?></td>
+                <td>
+                  <center><img src="<?php echo base_url(); ?>foto_loker/<?php echo $lkr->gambar ?>" alt="" width="100"></center>
+                </td>
                 <td><?php echo $lkr->nama_loker ?></td>
-                <td><?php echo $lkr->gambar ?></td>
                 <td><?php echo $lkr->alamat ?></td>
-                <td><?php echo $lkr->deskripsi ?></td>
-                <td><?php echo $lkr->kategori ?></td>
                 <td>
                   <a href="<?php echo base_url(); ?>index.php/Page/detailLoker/<?php echo $lkr->id_loker ?>" class="btn btn-info">Detail</a>
                   <a href="<?php echo base_url(); ?>index.php/Page/hapusLoker/<?php echo $lkr->id_loker ?>" class="btn btn-danger">Hapus</a>
-                  <a href="<?php echo base_url(); ?>index.php/Page/editDataLoker/<?php echo $lkr->id_loker ?>" class="btn btn-warning">Edit</a>
+                  <a href="<?php echo base_url(); ?>index.php/Page/editLoker/<?php echo $lkr->id_loker ?>" class="btn btn-warning">Edit</a>
                 </td>
               </tr>
             <?php } ?>

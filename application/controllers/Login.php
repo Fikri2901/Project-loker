@@ -43,7 +43,10 @@ class Login extends CI_Controller
 			$this->session->set_userdata('masuk', TRUE);
 			$this->session->set_userdata('akses', '3');
 			$this->session->set_userdata('ses_id', $data['id_pelamar']);
-			$this->session->set_userdata('ses_nama', $data['username']);
+			$this->session->set_userdata('ses_nama', $data['nama']);
+			$this->session->set_userdata('ses_alamat', $data['alamat']);
+			$this->session->set_userdata('ses_no_telp', $data['no_telp']);
+			$this->session->set_userdata('ses_email', $data['email']);
 			redirect('c_pelamar/HomePelamar');
 		} else if ($cek_perusahaan->num_rows() > 0) { //jika login sebagai mahasiswa
 
@@ -51,7 +54,7 @@ class Login extends CI_Controller
 			$this->session->set_userdata('masuk', TRUE);
 			$this->session->set_userdata('akses', '3');
 			$this->session->set_userdata('ses_id', $data['id_perusahaan']);
-			$this->session->set_userdata('ses_nama', $data['username']);
+			$this->session->set_userdata('ses_nama', $data['nama']);
 			redirect('c_perusahaan/HomePerusahaan');
 		} else {  // jika username dan password tidak ditemukan atau salah
 			$url = base_url('login');
