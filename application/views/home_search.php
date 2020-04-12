@@ -120,7 +120,6 @@
 										</div>
 									</div>
 									<div class="job-post-item-body d-block d-md-flex">
-										<div class="mr-3"><span class="icon-layers"></span> <a href="#">Facebook, Inc.</a></div>
 										<div><span class="icon-my_location"></span> <span><?php echo $lkr->alamat ?></span></div>
 									</div>
 								</div>

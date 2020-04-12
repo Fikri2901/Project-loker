@@ -36,8 +36,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home</a>
                     </li>
-					<li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_profile_perusahaan">Profil</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_profile_perusahaan/index/<?php echo $this->session->userdata('ses_id'); ?>">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_about">About</a>
@@ -48,7 +48,7 @@
                     <li class="nav-item cta mr-md-1">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/new_post">Tambahkan Loker</a>
                     </li>
-					<li class="nav-item cta cta-colored">
+                    <li class="nav-item cta cta-colored">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_perusahaan/c_list">List Loker</a>
                     </li>
                     <li class="nav-item">

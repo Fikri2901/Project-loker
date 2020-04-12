@@ -37,6 +37,9 @@
                         <a class="nav-link" href="<?php echo base_url(); ?>c_pelamar/HomePelamar">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>c_pelamar/c_profile_pelamar/index/<?php echo $this->session->userdata('ses_id'); ?>">Profil</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>c_pelamar/c_about">About</a>
                     </li>
                     <li class="nav-item">
