@@ -25,7 +25,7 @@
             <figure><img src="<?php echo base_url() . 'asset/login/images/signin-image.jpg' ?>" alt="sing up image"></figure>
 
             <a href="<?php echo base_url(); ?>registrasiPelamar" class="signup-image-link">Create applicant account</a>
-            <a href="#" class="signup-image-link">Create a company account</a>
+            <a href="<?php echo base_url(); ?>registrasiPerusahaan" class="signup-image-link">Create a company account</a>
 
           </div>
 
@@ -41,11 +41,7 @@
                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                 <input type="password" name="password" id="password" placeholder="Password" />
               </div>
-              <div class="form-group">
-                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
-                  me</label>
-              </div>
+
               <div class="form-group form-button">
                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
               </div>

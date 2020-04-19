@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
           <div class="col-md-8 ftco-animate text-center text-md-left mb-5">
-          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>New Job Post</span></p>
+            <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>New Job Post</span></p>
             <h1 class="mb-3 bread">Tambahkan Lowongan</h1>
           </div>
         </div>
@@ -13,78 +13,79 @@
     <div class="ftco-section bg-light">
       <div class="container">
         <div class="row">
-       
+
           <div class="col-md-12 col-lg-8 mb-5">
-          
-			     <form action="#" class="p-5 bg-white">
-              
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Nama Pekerjaan</label>
-                  <input type="text" id="fullname" class="form-control" placeholder="eg. Professional UI/UX Designer">
-                </div>
+
+            <?php echo form_open_multipart('c_perusahaan/new_post/tambahDataLoker'); ?>
+
+            <div class="row form-group">
+              <label class="font-weight-bold" for="gambar">Upload Poster</label>
+              <div class="col-md-12">
+                <input type="file" class="btn btn-primary" id="gambar" name="gambar">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <label class="font-weight-bold" for="nama_loker">Nama Pekerjaan</label>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <input type="text" id="nama_loker" class="form-control" name="nama_loker">
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <label class="font-weight-bold" for="kategori">Kategori</label>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label for="option-job-type-1">
+                  <input type="radio" id="option-job-type-1" name="kategori" id="kategori" value="Full Time"> Full Time
+                </label>
+              </div>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label for="option-job-type-2">
+                  <input type="radio" id="option-job-type-2" name="kategori" id="kategori" value="Part Time"> Part Time
+                </label>
               </div>
 
-              <div class="row form-group">
-                <label class="font-weight-bold" for="fullname">Kategori</label>
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-job-type-1">
-                    <input type="radio" id="option-job-type-1" name="job-type"> Full Time
-                  </label>
-                </div>
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-job-type-2">
-                    <input type="radio" id="option-job-type-2" name="job-type"> Part Time
-                  </label>
-                </div>
-
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-job-type-3">
-                    <input type="radio" id="option-job-type-3" name="job-type"> Freelance
-                </div>
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-job-type-4">
-                    <input type="radio" id="option-job-type-4" name="job-type"> Internship
-                  </label>
-                </div>
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="option-job-type-4">
-                    <input type="radio" id="option-job-type-4" name="job-type"> Termporary
-                  </label>
-                </div>
-
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label for="option-job-type-3">
+                  <input type="radio" id="option-job-type-3" name="kategori" id="kategori" value="Freelance"> Freelance
+              </div>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label for="option-job-type-4">
+                  <input type="radio" id="option-job-type-4" name="kategori" id="kategori" value="magang"> magang
+                </label>
+              </div>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label for="option-job-type-4">
+                  <input type="radio" id="option-job-type-4" name="kategori" id="kategori" value="Sementara"> Sementara
+                </label>
               </div>
 
-              <div class="row form-group mb-4">
-                <label class="font-weight-bold" for="fullname">Alamat</label>
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <input type="text" class="form-control" placeholder="Western City, UK
-">
-                </div>
-              </div>
+            </div>
 
-              <div class="row form-group">
-                <label class="font-weight-bold" for="fullname">Deskripsi</label>
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <textarea name="" class="form-control" id="" cols="10" rows="5"></textarea>
-                </div>
+            <div class="row form-group mb-4">
+              <label class="font-weight-bold" for="alamat">Alamat</label>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <input type="text" id="alamat" class="form-control" name="alamat">
               </div>
+            </div>
 
-			  <div class="row form-group">
-                <label class="font-weight-bold" for="fullname">Upload Gambar</label>
-				<div class="col-md-12">
-					<input type="submit" value="Pilih Gambar" class="btn btn-primary">
-				</div>
+            <div class="row form-group">
+              <label class="font-weight-bold" for="dekripsi">Deskripsi</label>
+              <div class="col-md-12 mb-3 mb-md-0">
+                <textarea name="deskripsi" id="deskripsi" class="form-control" cols="10" rows="5"></textarea>
               </div>
+            </div>
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Posting Lowongan Pekerjaan" class="btn btn-primary  py-2 px-5">
-                </div>
+            <input type="hidden" name="id_perusahaan" id="id_perusahaan" value="<?php echo $this->session->userdata('ses_id'); ?>">
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="Posting Lowongan Pekerjaan" class="btn btn-primary  py-2 px-5">
               </div>
+            </div>
 
-  
-            </form>
+
+            <?php echo form_close(); ?>
           </div>
 
           <div class="col-lg-4">
@@ -100,7 +101,7 @@
               <p class="mb-0"><a href="#">jobpply@jobpply.com</a></p>
 
             </div>
-            
+
             <div class="p-4 mb-3 bg-white">
               <h3 class="h5 text-black mb-3">More Info</h3>
               <p>Anda dapat menemukan informasi terbaru mengenai kami pada website ini. JOBBLY terus berkembang dan berevolusi. Kami menyediakan beragam layanan. Misi kami adalah menyediakan Solusi Career terbaik yang dapat membantu semua orang.</p>

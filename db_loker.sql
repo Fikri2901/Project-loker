@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Apr 2020 pada 08.42
+-- Waktu pembuatan: 19 Apr 2020 pada 11.35
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -62,11 +62,7 @@ CREATE TABLE IF NOT EXISTS `form_pelamaran` (
   `email` varchar(50) NOT NULL,
   `uploud_cv` varchar(50) NOT NULL,
   `uploud_ijazah` varchar(50) NOT NULL,
-  `id_pelamar` int(11) NOT NULL,
-  `id_perusahaan` int(11) NOT NULL,
-  PRIMARY KEY (`id_form_pelamaran`),
-  KEY `id_pelamar` (`id_pelamar`,`id_perusahaan`),
-  KEY `id_perusahaan` (`id_perusahaan`)
+  PRIMARY KEY (`id_form_pelamaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -80,27 +76,30 @@ CREATE TABLE IF NOT EXISTS `loker` (
   `id_loker` int(11) NOT NULL AUTO_INCREMENT,
   `nama_loker` varchar(50) NOT NULL,
   `gambar` varchar(50) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
+  `alamat_lkr` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
   `kategori` varchar(50) NOT NULL,
+  `id_perusahaan` int(11) NOT NULL,
   PRIMARY KEY (`id_loker`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `loker`
 --
 
-INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat`, `deskripsi`, `kategori`) VALUES
-(1, 'Programmer', 'Programmer.jpeg', 'surabaya', 'Desain-Desain', 'full time'),
-(2, 'Back-End Developer', 'Back-End_Developer.jpg', 'pasuruan', 'periklanan', 'part time'),
-(3, 'Software developer', 'Software_developer.jpeg', 'jember', 'sosial human', 'full time'),
-(4, 'Developer website', 'Developer_website.jpg', 'sidoarjo', 'pengelola data basis', 'part time'),
-(5, 'Education & Training', 'Education_&_Training.jpg', 'malang', 'pelatihan', 'part time'),
-(6, 'IT support', 'IT_support.jpg', 'mojokerto', 'memimpin project', 'full time'),
-(7, 'Guru komputer', 'Guru_komputer.jpg', 'surabaya', 'membuat program', 'magang'),
-(8, 'Designer', 'Designer.jpeg', 'malang', 'pemasaran', 'freelance'),
-(9, 'Project manager', 'Project_manager.jpeg', 'probolinggo', 'manager', 'part time'),
-(11, 'System Administrator', 'System_Administrator.jpg', 'PLN pusat surabaya', 'Minimal D3 Teknik Informatika, laki-laki minimal 20 thn.', 'part time');
+INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat_lkr`, `deskripsi`, `kategori`, `id_perusahaan`) VALUES
+(1, 'Programmer', 'Programmer.jpeg', 'surabaya', 'Desain-Desain', 'full time', 4),
+(2, 'Back-End Developer', 'Back-End_Developer.jpg', 'pasuruan', 'periklanan', 'part time', 5),
+(3, 'Software developer', 'Software_developer.jpeg', 'jember', 'sosial human', 'full time', 4),
+(4, 'Developer website', 'Developer_website.jpg', 'sidoarjo', 'pengelola data basis', 'part time', 3),
+(5, 'Education & Training', 'Education_&_Training.jpg', 'malang', 'pelatihan', 'part time', 3),
+(6, 'IT support', 'IT_support.jpg', 'mojokerto', 'memimpin project', 'full time', 5),
+(7, 'Guru komputer', 'Guru_komputer.jpg', 'surabaya', 'membuat program', 'magang', 5),
+(8, 'Designer', 'Designer.jpeg', 'malang', 'pemasaran', 'freelance', 4),
+(9, 'Project manager', 'Project_manager.jpeg', 'probolinggo', 'manager', 'part time', 3),
+(11, 'System Administrator', 'System_Administrator.jpg', 'PLN pusat surabaya', 'Minimal D3 Teknik Informatika, laki-laki minimal 20 thn.', 'part time', 5),
+(12, 'Design Banner', 'Design_Banner.jpg', 'surabaya', 'ini design banner', 'Part Time', 3),
+(13, 'Design stiker', 'Design_stiker.jpg', 'bangil', 'ini design stiker', 'Sementara', 3);
 
 -- --------------------------------------------------------
 
@@ -134,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `reg_pelamar` (
 INSERT INTO `reg_pelamar` (`id_pelamar`, `foto_profil`, `nama`, `username`, `password`, `tgl_lahir`, `email`, `alamat`, `no_telp`, `lulusan`, `tinggi_bdn`, `berat_bdn`, `jenis_kelamin`, `level`) VALUES
 (1, 'profil.jpg', 'ega', 'ega', '123', '2020-03-04', 'ega@gmail.com', 'bojonegoro', 88888888, 'SMA', 160, 50, 'Laki-Laki', 2),
 (12, 'mukti12.jpeg', 'mukti12', 'mukti12', '123', '2020-01-01', 'mukti@gmail.com', 'bojonegoro', 22222222, 'S1', 47, 50, 'laki laki', 2),
-(13, 'fikri.jpg', 'fikri', 'fikri', '123', '2000-09-01', 'fikri@gmail.com', 'pasuruan', 888811181, 'S2', 65, 43, 'perempuan', 2),
+(13, 'fikri.jpg', 'fikri', 'fikri', '123', '2000-09-01', 'fikri@gmail.com', 'pasuruan', 888811181, 'S2', 65, 43, 'laki laki', 2),
 (14, 'viki.jpg', 'viki', 'viki', '123', '2020-01-01', 'viki@gmail.com', 'pasuruan , jl.MT HARYONO', 2222222, 'D3', 27, 41, 'laki laki', 2);
 
 -- --------------------------------------------------------
@@ -159,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `reg_perusahaan` (
   `contact_person` int(11) NOT NULL,
   `level` int(3) NOT NULL,
   PRIMARY KEY (`id_perusahaan`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `reg_perusahaan`
@@ -167,18 +166,9 @@ CREATE TABLE IF NOT EXISTS `reg_perusahaan` (
 
 INSERT INTO `reg_perusahaan` (`id_perusahaan`, `logo`, `nama`, `username`, `password`, `email`, `alamat`, `no_telp`, `fax`, `website`, `deskripsi`, `contact_person`, `level`) VALUES
 (1, 'vikky.jpg', 'vikky', 'vikky', '321', 'vikky@gmail.com', 'pasuruan', 880880880, 1222222211, 'vikky.blogspot.com', 'iki gwe perusahaan', 111111111, 0),
-(3, 'samsung.jpg', 'samsung', 'samsung', '321', 'samsung@gmail.com', 'amerika serikat', 7333922, 911922, 'samsung.co.id', 'ini perusahaan samsung', 34424224, 3);
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `form_pelamaran`
---
-ALTER TABLE `form_pelamaran`
-  ADD CONSTRAINT `form_pelamaran_ibfk_1` FOREIGN KEY (`id_perusahaan`) REFERENCES `reg_perusahaan` (`id_perusahaan`),
-  ADD CONSTRAINT `form_pelamaran_ibfk_2` FOREIGN KEY (`id_pelamar`) REFERENCES `reg_pelamar` (`id_pelamar`);
+(3, 'samsung.jpg', 'samsung', 'samsung', '321', 'samsung@gmail.com', 'amerika serikat', 7333922, 911922, 'samsung.co.id', 'ini perusahaan samsung', 34424224, 3),
+(4, 'panasonic.jpg', 'panasonic', 'panasonic', '321', 'panasonic@gmail.com', 'malang', 822323223, 777777, 'panasonic.co.id', 'perusahaan panasonic', 66767, 3),
+(5, 'gojek.jpg', 'gojek', 'gojek', '321', 'gojek@app.co.id', 'sidoarjo', 92292839, 778780, 'gojek.co.id', 'perusahaan gojek', 13323343, 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

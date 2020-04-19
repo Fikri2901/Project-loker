@@ -89,4 +89,10 @@ class pelamar_model extends CI_Model
         // $this->db->or_like('harga', $keyword);
         return $this->db->get()->result();
     }
+
+    public function UpdateFile($id, $data)
+    {
+        $this->db->where('id_pelamar', $id);
+        return $this->db->update('reg_pelamar', $data);
+    }
 }

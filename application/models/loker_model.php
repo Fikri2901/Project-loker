@@ -14,13 +14,22 @@ class loker_model extends CI_Model
         $this->db->from('loker');
         $this->db->like('nama_loker', $keyword);
         $this->db->or_like('kategori', $keyword);
-        $this->db->or_like('alamat', $keyword);
+        $this->db->or_like('alamat_lkr', $keyword);
         return $this->db->get()->result();
     }
 
     public function GetLokerById($id)
     {
         return $this->db->get_where("loker", array('id_loker' => $id))->row();
+    }
+
+    public function GetLokerJoin($id)
+    {
+        $this->db->select('*');
+        $this->db->from('loker');
+        $this->db->join('reg_perusahaan', 'reg_perusahaan.id_perusahaan = loker.id_perusahaan', 'left');
+        $this->db->where('reg_perusahaan.id_perusahaan', $id);
+        return $this->db->get()->result();
     }
 
     public function AddLoker()
@@ -45,9 +54,10 @@ class loker_model extends CI_Model
         $data = array(
             'gambar' => $file_name,
             'nama_loker' => $this->input->post('nama_loker'),
-            'alamat' => $this->input->post('alamat'),
+            'alamat_lkr' => $this->input->post('alamat'),
             'deskripsi' => $this->input->post('deskripsi'),
             'kategori' => $this->input->post('kategori'),
+            'id_perusahaan' => $this->input->post('id_perusahaan')
         );
 
         $this->db->insert('loker', $data);

@@ -79,10 +79,7 @@
 								</div>
 
 								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="<?php echo base_url(); ?>c_perusahaan/c_list/edit/<?php echo $lkr->id_loker ?>" class="btn btn-warning py-2">Edit Job</a>
-								</div>
-								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="#" class="btn btn-danger py-2">Hapus Job</a>
+									<a href="#" class="btn btn-primary py-2">Apply Job</a>
 								</div>
 							</div>
 						</div><!-- end -->

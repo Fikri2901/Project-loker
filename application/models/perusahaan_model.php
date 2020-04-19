@@ -14,6 +14,8 @@ class perusahaan_model extends CI_Model
         return $this->db->get_where("reg_perusahaan", array('id_perusahaan' => $id))->row();
     }
 
+
+
     public function AddPerusahaan()
     {
         $foto = $this->input->post('nama');

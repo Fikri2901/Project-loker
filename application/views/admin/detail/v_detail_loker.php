@@ -27,9 +27,10 @@
                     <div class="card-body col-md-6">
                         <p class="card-title">Id : <?php echo $loker->id_loker ?></p>
                         <h5 class="card-title">Nama loker : <?= $loker->nama_loker ?></h5>
-                        <h6 class="card-text">Alamat : <?= $loker->alamat ?></h6>
+                        <h6 class="card-text">Alamat : <?= $loker->alamat_lkr ?></h6>
                         <p class="card-text">Deskripsi : <?= $loker->deskripsi ?></p>
                         <p class="card-text">Kategori : <?= $loker->kategori ?></p>
+                        <p class="card-text">id_perusahaan : <?= $loker->id_perusahaan ?></p>
                         <a href="<?= base_url(); ?>index.php/page/data_loker" class="btn btn-primary">Kembali</a>
                     </div>
                 </div>

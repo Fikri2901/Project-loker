@@ -37,7 +37,7 @@
                   <center><img src="<?php echo base_url(); ?>foto_loker/<?php echo $lkr->gambar ?>" alt="" width="100"></center>
                 </td>
                 <td><?php echo $lkr->nama_loker ?></td>
-                <td><?php echo $lkr->alamat ?></td>
+                <td><?php echo $lkr->alamat_lkr ?></td>
                 <td>
                   <a href="<?php echo base_url(); ?>index.php/Page/detailLoker/<?php echo $lkr->id_loker ?>" class="btn btn-info">Detail</a>
                   <a href="<?php echo base_url(); ?>index.php/Page/hapusLoker/<?php echo $lkr->id_loker ?>" class="btn btn-danger">Hapus</a>

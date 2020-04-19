@@ -11,7 +11,7 @@ class registrasiPelamar extends CI_Controller
 
     function index()
     {
-        $data['title'] = 'login Pelamar';
+        $data['title'] = 'Registrasi Pelamar';
         $this->load->view('registrasi/v_pelamar_registrasi', $data);
     }
 

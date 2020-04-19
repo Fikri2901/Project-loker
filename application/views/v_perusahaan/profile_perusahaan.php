@@ -69,7 +69,7 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="deskripsi">Deskripsi</label>
-          <textarea name="deskripsi" id="deskripsi" cols="120" rows="5"><?= $perusahaan->deskripsi ?></textarea>
+          <textarea name="deskripsi" id="deskripsi" cols="120" rows="5" style="resize: none;"><?= $perusahaan->deskripsi ?></textarea>
         </div>
 
       </div>

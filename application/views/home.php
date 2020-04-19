@@ -121,7 +121,7 @@
 									</div>
 									<div class="job-post-item-body d-block d-md-flex">
 
-										<div><span class="icon-my_location"></span> <span><?php echo $lkr->alamat ?></span></div>
+										<div><span class="icon-my_location"></span> <span><?php echo $lkr->alamat_lkr ?></span></div>
 									</div>
 								</div>
 

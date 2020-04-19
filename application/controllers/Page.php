@@ -81,14 +81,14 @@ class Page extends CI_Controller
   function editDataPelamar()
   {
     $id = $this->input->post('id');
-    $data = $this->pelamar_model->GetPelamarById($id);
-    $nama = './foto_pelamar/ ' . $data->foto_profil;
+    $data1 = $this->pelamar_model->GetPelamarById($id);
+    $nama = './foto_pelamar/' . $data1->foto_profil;
 
     if (is_readable($nama) && unlink($nama)) {
 
       $foto = $this->input->post('nama');
 
-      $config['upload_path']          = './foto_pelamar';
+      $config['upload_path']          = './foto_pelamar/';
       $config['allowed_types']        = 'jpg|png|jpeg';
       $config['max_size']             = 5024;
       $config['file_name']            = $foto;
@@ -119,6 +119,32 @@ class Page extends CI_Controller
         'level' => 2
       );
 
+      $this->pelamar_model->UpdateFile($id, $data);
+      $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
+
+      if ($this->session->userdata('akses') == '1') {
+        $this->load->view('admin/v_data_pelamar', $data);
+      } else {
+        echo "Anda tidak berhak mengakses halaman ini";
+      }
+    } else {
+
+      $data = array(
+        'foto_profil' => $this->input->post('foto'),
+        'nama' => $this->input->post('nama'),
+        'username' => $this->input->post('username'),
+        'password' => $this->input->post('password'),
+        'tgl_lahir' => $this->input->post('tgl_lahir'),
+        'email' => $this->input->post('email'),
+        'alamat' => $this->input->post('alamat'),
+        'no_telp' => $this->input->post('no_telp'),
+        'lulusan' => $this->input->post('lulusan'),
+        'tinggi_bdn' => $this->input->post('tinggi_bdn'),
+        'berat_bdn' => $this->input->post('berat_bdn'),
+        'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+        'level' => 2
+      );
+
       $where = array(
         'id_pelamar' => $id
       );
@@ -132,36 +158,6 @@ class Page extends CI_Controller
       } else {
         echo "Anda tidak berhak mengakses halaman ini";
       }
-    } else {
-      echo "Data gambar harus diisi";
-      // $data = array(
-      //   'nama' => $this->input->post('nama'),
-      //   'username' => $this->input->post('username'),
-      //   'password' => $this->input->post('password'),
-      //   'tgl_lahir' => $this->input->post('tgl_lahir'),
-      //   'email' => $this->input->post('email'),
-      //   'alamat' => $this->input->post('alamat'),
-      //   'no_telp' => $this->input->post('no_telp'),
-      //   'lulusan' => $this->input->post('lulusan'),
-      //   'tinggi_bdn' => $this->input->post('tinggi_bdn'),
-      //   'berat_bdn' => $this->input->post('berat_bdn'),
-      //   'jenis_kelamin' => $this->input->post('jenis_kelamin'),
-      //   'level' => 2
-      // );
-
-      // $where = array(
-      //   'id_pelamar' => $id
-      // );
-
-      // $this->pelamar_model->updateDataPelamar($where, $data, 'reg_pelamar');
-
-      // $data['reg_pelamar'] = $this->pelamar_model->GetPelamar()->result();
-
-      // if ($this->session->userdata('akses') == '1') {
-      //   $this->load->view('admin/v_data_pelamar', $data);
-      // } else {
-      //   echo "Anda tidak berhak mengakses halaman ini";
-      // }
     }
   }
 
