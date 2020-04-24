@@ -11,7 +11,7 @@
       </div>
       <div class="col mt-4" style="text-align: center; font-size: large">
         <center>
-          <p><span>Alamat : </span> <?php echo $loker->alamat ?> </p>
+          <p><span>Alamat : </span> <?php echo $loker->alamat_lkr ?> </p>
           <p><span>Deskripsi : </span> <?php echo $loker->deskripsi ?> </p>
           <p><span>Kategori : </span> <?php echo $loker->kategori ?> </p>
         </center>

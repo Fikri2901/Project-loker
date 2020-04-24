@@ -95,4 +95,41 @@ class pelamar_model extends CI_Model
         $this->db->where('id_pelamar', $id);
         return $this->db->update('reg_pelamar', $data);
     }
+
+    public function AddForm()
+    {
+
+        $config['upload_path']          = './form';
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['max_size']             = 5024;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('upload_cv') && !$this->upload->do_upload('upload_ijazah')) {
+            $error =  $this->upload->display_errors();
+            echo $error;
+        }
+
+        $this->upload->do_upload('upload_cv');
+        $upload_cv = $this->upload->data();
+        $file_name1 = $upload_cv['file_name'];
+
+        $this->upload->do_upload('upload_ijazah');
+        $upload_ijazah = $this->upload->data();
+        $file_name2 = $upload_ijazah['file_name'];
+
+        $data = array(
+            'nama_pekerjaan' => $this->input->post('nama_pekerjaan'),
+            'nama_lengkap' => $this->input->post('nama_lengkap'),
+            'alamat_f' => $this->input->post('alamat_f'),
+            'no_telp_f' => $this->input->post('no_telp_f'),
+            'email_f' => $this->input->post('email_f'),
+            'upload_cv' => $file_name1,
+            'upload_ijazah' => $file_name2,
+            'id_pelamar' => $this->input->post('id_pelamar'),
+            'id_perusahaan' => $this->input->post('id_perusahaan')
+        );
+
+        $this->db->insert('form_pelamaran', $data);
+    }
 }

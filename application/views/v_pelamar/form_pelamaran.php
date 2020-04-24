@@ -16,67 +16,61 @@
 
           <div class="col-md-12 col-lg-8 mb-5">
 
-            <form action="#" class="p-5 bg-white">
+            <?php echo form_open_multipart('c_pelamar/c_form_pelamaran/tambahDataForm'); ?>
 
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Nama Pekerjaan</label>
-                  <input type="text" id="fullname" class="form-control" disabled value="<?php echo $loker->nama_loker ?>">
-                </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="nama_pekerjaan">Nama Pekerjaan</label>
+                <input type="text" id="nama_pekerjaan" name="nama_pekerjaan" class="form-control" value="<?php echo $loker->nama_loker ?>" readonly>
               </div>
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Nama</label>
-                  <input type="text" class="form-control" value="<?php echo $this->session->userdata('ses_nama'); ?>">
-                </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="nama_lengkap">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" value="<?php echo $this->session->userdata('ses_nama'); ?>">
               </div>
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Alamat</label>
-                  <input type="text" class="form-control" value="<?php echo $this->session->userdata('ses_alamat'); ?>">
-                </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="alamat_f">Alamat</label>
+                <input type="text" id="alamat_f" name="alamat_f" class="form-control" value="<?php echo $this->session->userdata('ses_alamat'); ?>">
               </div>
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">No Telp</label>
-                  <input type="text" class="form-control" value="<?php echo $this->session->userdata('ses_no_telp'); ?>">
-                </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="no_telp_f">No Telp</label>
+                <input type="text" class="form-control" id="no_telp_f" name="no_telp_f" value="<?php echo $this->session->userdata('ses_no_telp'); ?>">
               </div>
-              <div class="row form-group mb-4">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Email</label>
-                  <input type="text" class="form-control" value="<?php echo $this->session->userdata('ses_email'); ?>">
-                </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="email_f">Email</label>
+                <input type="text" class="form-control" id="email_f" name="email_f" value="<?php echo $this->session->userdata('ses_email'); ?>">
               </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="upload_cv">Upload CV </label>
+                <input type="file" class="btn btn-primary" id="upload_cv" name="upload_cv">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="font-weight-bold" for="upload_ijazah">Upload Ijazah </label>
+                <input type="file" class="btn btn-primary" id="upload_ijazah" name="upload_ijazah">
+              </div>
+            </div>
+            <input type="hidden" id="id_pelamar" name="id_pelamar" class="form-control" value="<?php echo $this->session->userdata('ses_id'); ?>">
+            <input type="hidden" id="id_perusahaan" name="id_perusahaan" class="form-control" value="<?php echo $loker->id_perusahaan ?>">
 
-              <!-- <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Deskripsi</label>
-                  <textarea name="" class="form-control" id="" cols="10" rows="5"></textarea>
-                </div>
-              </div> -->
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="fullname">Upload CV </label>
-                  <input type="file" class="btn btn-primary">
-                </div>
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="Send" class="btn btn-primary  py-2 px-5">
               </div>
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="fullname">Upload Ijazah </label>
-                  <input type="file" class="btn btn-primary">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Send" class="btn btn-primary  py-2 px-5">
-                </div>
-              </div>
+            </div>
 
 
-            </form>
+            <?php echo form_close(); ?>
           </div>
 
           <div class="col-lg-4">

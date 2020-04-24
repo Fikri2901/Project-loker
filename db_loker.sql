@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Apr 2020 pada 11.35
+-- Waktu pembuatan: 24 Apr 2020 pada 19.35
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -56,14 +56,25 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `email`, `level`) VALUE
 DROP TABLE IF EXISTS `form_pelamaran`;
 CREATE TABLE IF NOT EXISTS `form_pelamaran` (
   `id_form_pelamaran` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_pekerjaan` varchar(50) NOT NULL,
   `nama_lengkap` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL,
-  `no_telp` int(15) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `uploud_cv` varchar(50) NOT NULL,
-  `uploud_ijazah` varchar(50) NOT NULL,
+  `alamat_f` varchar(50) NOT NULL,
+  `no_telp_f` int(15) NOT NULL,
+  `email_f` varchar(50) NOT NULL,
+  `upload_cv` varchar(50) NOT NULL,
+  `upload_ijazah` varchar(50) NOT NULL,
+  `id_pelamar` int(11) NOT NULL,
+  `id_perusahaan` int(11) NOT NULL,
   PRIMARY KEY (`id_form_pelamaran`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `form_pelamaran`
+--
+
+INSERT INTO `form_pelamaran` (`id_form_pelamaran`, `nama_pekerjaan`, `nama_lengkap`, `alamat_f`, `no_telp_f`, `email_f`, `upload_cv`, `upload_ijazah`, `id_pelamar`, `id_perusahaan`) VALUES
+(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', '31.jpg', '6.jpg', 13, 3),
+(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', '21.jpg', 'foto1.jpeg', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -81,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `loker` (
   `kategori` varchar(50) NOT NULL,
   `id_perusahaan` int(11) NOT NULL,
   PRIMARY KEY (`id_loker`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `loker`
@@ -99,7 +110,8 @@ INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat_lkr`, `deskrips
 (9, 'Project manager', 'Project_manager.jpeg', 'probolinggo', 'manager', 'part time', 3),
 (11, 'System Administrator', 'System_Administrator.jpg', 'PLN pusat surabaya', 'Minimal D3 Teknik Informatika, laki-laki minimal 20 thn.', 'part time', 5),
 (12, 'Design Banner', 'Design_Banner.jpg', 'surabaya', 'ini design banner', 'Part Time', 3),
-(13, 'Design stiker', 'Design_stiker.jpg', 'bangil', 'ini design stiker', 'Sementara', 3);
+(13, 'Design stiker', 'Design_stiker.jpg', 'bangil', 'ini design stiker', 'Sementara', 3),
+(14, 'program', 'program.jpg', 'malang', 'daaaa', 'Freelance', 3);
 
 -- --------------------------------------------------------
 

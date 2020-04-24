@@ -14,7 +14,7 @@ class HomePelamar extends CI_Controller
     public function index()
     {
         $data['loker'] = $this->loker_model->GetLoker()->result();
-        $data['title'] = 'JOBBLY - About';
+        $data['title'] = 'JOBBLY - Home';
         $this->load->view('v_pelamar/header', $data);
         $this->load->view('v_pelamar/home');
         $this->load->view('v_pelamar/footer');
