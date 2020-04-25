@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-8 ftco-animate text-center text-md-left mb-5">
-                <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Form</span></p>
+                <p class="breadcrumbs mb-0"><span class="mr-3"><a href="<?php echo base_url(); ?>c_perusahaan/HomePerusahaan">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Form</span></p>
                 <h1 class="mb-3 bread">Info Form <?php echo $this->session->userdata('ses_nama'); ?> </h1>
             </div>
         </div>
@@ -29,7 +29,7 @@
                                     <li class="list-group-item"><?= $fm->no_telp_f ?></li>
                                 </ul>
                                 <div class="card-body">
-                                    <a href="#" class="btn btn-primary">Detail Form</a>
+                                    <a href="<?php echo base_url(); ?>c_perusahaan/list_form/detailForm/<?= $fm->id_form_pelamaran ?>/<?= $fm->id_pelamar ?>" class="btn btn-primary">Detail Form</a>
                                 </div>
                             </div>
                         <?php } ?>

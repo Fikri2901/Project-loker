@@ -48,6 +48,12 @@
                 <input type="text" class="form-control" id="email_f" name="email_f" value="<?php echo $this->session->userdata('ses_email'); ?>">
               </div>
             </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="font-weight-bold" for="alasan">Alasan Ingin bekerja </label><br>
+                <textarea name="alasan" id="alasan" cols="77%" rows="10" style="resize: none;"></textarea>
+              </div>
+            </div>
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="font-weight-bold" for="upload_cv">Upload CV </label>

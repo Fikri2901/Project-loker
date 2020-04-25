@@ -9,4 +9,18 @@ class form_model extends CI_Model
         $this->db->where('reg_perusahaan.id_perusahaan', $id);
         return $this->db->get()->result();
     }
+
+    public function GetFormJoinFoto($id1)
+    {
+        $this->db->select('foto_profil');
+        $this->db->from('form_pelamaran');
+        $this->db->join('reg_pelamar', 'reg_pelamar.id_pelamar = form_pelamaran.id_pelamar');
+        $this->db->where('reg_pelamar.id_pelamar', $id1);
+        return $this->db->get()->result();
+    }
+
+    public function GetFormById($id)
+    {
+        return $this->db->get_where("form_pelamaran", array('id_form_pelamaran' => $id))->row();
+    }
 }

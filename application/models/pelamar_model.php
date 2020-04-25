@@ -124,6 +124,7 @@ class pelamar_model extends CI_Model
             'alamat_f' => $this->input->post('alamat_f'),
             'no_telp_f' => $this->input->post('no_telp_f'),
             'email_f' => $this->input->post('email_f'),
+            'alasan' => $this->input->post('alasan'),
             'upload_cv' => $file_name1,
             'upload_ijazah' => $file_name2,
             'id_pelamar' => $this->input->post('id_pelamar'),
