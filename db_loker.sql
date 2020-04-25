@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Apr 2020 pada 19.35
+-- Waktu pembuatan: 25 Apr 2020 pada 11.59
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -61,20 +61,23 @@ CREATE TABLE IF NOT EXISTS `form_pelamaran` (
   `alamat_f` varchar(50) NOT NULL,
   `no_telp_f` int(15) NOT NULL,
   `email_f` varchar(50) NOT NULL,
+  `alasan` text NOT NULL,
   `upload_cv` varchar(50) NOT NULL,
   `upload_ijazah` varchar(50) NOT NULL,
   `id_pelamar` int(11) NOT NULL,
   `id_perusahaan` int(11) NOT NULL,
   PRIMARY KEY (`id_form_pelamaran`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `form_pelamaran`
 --
 
-INSERT INTO `form_pelamaran` (`id_form_pelamaran`, `nama_pekerjaan`, `nama_lengkap`, `alamat_f`, `no_telp_f`, `email_f`, `upload_cv`, `upload_ijazah`, `id_pelamar`, `id_perusahaan`) VALUES
-(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', '31.jpg', '6.jpg', 13, 3),
-(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', '21.jpg', 'foto1.jpeg', 1, 3);
+INSERT INTO `form_pelamaran` (`id_form_pelamaran`, `nama_pekerjaan`, `nama_lengkap`, `alamat_f`, `no_telp_f`, `email_f`, `alasan`, `upload_cv`, `upload_ijazah`, `id_pelamar`, `id_perusahaan`) VALUES
+(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', 'karena saya ingin bekerja', '31.jpg', '6.jpg', 13, 3),
+(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', 'karena saya ingin membahagiakan orang tua saya', '21.jpg', 'foto1.jpeg', 1, 3),
+(6, 'Programmer', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin dapat duit sendiri', 'man11.jpg', 'banner1.jpg', 14, 4),
+(7, 'System Administrator', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin menambah wawasan dalam pekerjaan ini', '11.jpg', '5.jpg', 14, 5);
 
 -- --------------------------------------------------------
 
