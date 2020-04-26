@@ -17,18 +17,18 @@
                 <div class="intro row  justify-content-center">
 
                     <div class="card mb-3" style="width: 100%">
-
                         <div class="card-body">
-                            <h5 class="card-title text-center"><?= $form->nama_pekerjaan ?></h5>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <img src="<?php echo base_url(); ?>foto_pelamar/<?php echo $pelamar[0]->foto_profil; ?>" alt="" width="100%">
+                            <h3 class="card-title text-center"><?= $form->nama_pekerjaan ?></h3>
+                            <hr>
+                            <div class="form-row ">
+                                <div class="form-group col-md-3">
+                                    <img src="<?php echo base_url(); ?>foto_pelamar/<?php echo $pelamar[0]->foto_profil; ?>" alt="" width="80%">
                                 </div>
-                                <div class="form-group col-md-8">
+                                <div class="form-group col-md-9">
                                     <p class="card-text"> Nama : <?= $form->nama_lengkap ?> </p>
                                     <p class="card-text"> Alamat : <?= $form->alamat_f ?> </p>
-                                    <p class="card-text"> No.Hp : <?= $form->no_telp_f ?> </p>
-                                    <p class="card-text"> Email : <?= $form->email_f ?> </p>
+                                    <p class="card-text"> No.Hp : +62<?= $form->no_telp_f ?> </p>
+                                    <p class="card-text"> Email : <a href="mailto:<?= $form->email_f ?>"><?= $form->email_f ?></a></p>
                                     <p class="card-text"> Alasan : <?= $form->alasan ?> </p>
                                 </div>
                             </div>
@@ -36,13 +36,17 @@
 
                             <div class="form-row text-center">
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">CV</label><br>
+                                    <label><b>CV</b></label><br>
                                     <img src="<?php echo base_url(); ?>form/<?php echo $form->upload_cv ?>" alt="" width="100%">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputPassword4">IJAZAH</label><br>
+                                    <label><b>IJAZAH</b></label><br>
                                     <img src="<?php echo base_url(); ?>form/<?php echo $form->upload_ijazah ?>" alt="" width="100%">
                                 </div>
+                            </div>
+                            <hr>
+                            <div class="text-right">
+                                <label for="">@Copyright Jobpply</label>
                             </div>
                         </div>
                     </div>

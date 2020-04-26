@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Apr 2020 pada 11.59
+-- Waktu pembuatan: 26 Apr 2020 pada 15.50
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -74,10 +74,10 @@ CREATE TABLE IF NOT EXISTS `form_pelamaran` (
 --
 
 INSERT INTO `form_pelamaran` (`id_form_pelamaran`, `nama_pekerjaan`, `nama_lengkap`, `alamat_f`, `no_telp_f`, `email_f`, `alasan`, `upload_cv`, `upload_ijazah`, `id_pelamar`, `id_perusahaan`) VALUES
-(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', 'karena saya ingin bekerja', '31.jpg', '6.jpg', 13, 3),
-(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', 'karena saya ingin membahagiakan orang tua saya', '21.jpg', 'foto1.jpeg', 1, 3),
-(6, 'Programmer', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin dapat duit sendiri', 'man11.jpg', 'banner1.jpg', 14, 4),
-(7, 'System Administrator', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin menambah wawasan dalam pekerjaan ini', '11.jpg', '5.jpg', 14, 5);
+(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', 'karena saya ingin bekerja', 'cv.jpg', 'ijasah.jpg', 13, 3),
+(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', 'karena saya ingin membahagiakan orang tua saya', 'cv1.jpg', 'ijasah1.jpg', 1, 3),
+(6, 'Programmer', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin dapat duit sendiri', 'cv2.jpg', 'ijasah2.jpg', 14, 4),
+(7, 'System Administrator', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin menambah wawasan dalam pekerjaan ini', 'cv3.jpg', 'ijasah3.jpg', 14, 5);
 
 -- --------------------------------------------------------
 
@@ -146,10 +146,10 @@ CREATE TABLE IF NOT EXISTS `reg_pelamar` (
 --
 
 INSERT INTO `reg_pelamar` (`id_pelamar`, `foto_profil`, `nama`, `username`, `password`, `tgl_lahir`, `email`, `alamat`, `no_telp`, `lulusan`, `tinggi_bdn`, `berat_bdn`, `jenis_kelamin`, `level`) VALUES
-(1, 'profil.jpg', 'ega', 'ega', '123', '2020-03-04', 'ega@gmail.com', 'bojonegoro', 88888888, 'SMA', 160, 50, 'Laki-Laki', 2),
-(12, 'mukti12.jpeg', 'mukti12', 'mukti12', '123', '2020-01-01', 'mukti@gmail.com', 'bojonegoro', 22222222, 'S1', 47, 50, 'laki laki', 2),
-(13, 'fikri.jpg', 'fikri', 'fikri', '123', '2000-09-01', 'fikri@gmail.com', 'pasuruan', 888811181, 'S2', 65, 43, 'laki laki', 2),
-(14, 'viki.jpg', 'viki', 'viki', '123', '2020-01-01', 'viki@gmail.com', 'pasuruan , jl.MT HARYONO', 2222222, 'D3', 27, 41, 'laki laki', 2);
+(1, 'ega.jpeg', 'ega', 'ega', '123', '2020-03-04', 'ega@gmail.com', 'bojonegoro', 88888888, 'SMA', 160, 50, 'Laki-Laki', 2),
+(12, 'mukti.jpeg', 'mukti', 'mukti', '123', '2020-01-01', 'mukti@gmail.com', 'bojonegoro', 22222222, 'S1', 47, 50, 'laki laki', 2),
+(13, 'fikri.jpg', 'fikri', 'fikri', '123', '2000-09-01', 'fikri@gmail.com', 'pasuruan', 888811181, 'D3', 65, 43, 'Laki-Laki', 2),
+(14, 'viki.jpeg', 'viki', 'viki', '123', '2020-01-01', 'viki@gmail.com', 'pasuruan , jl.MT HARYONO', 2222222, 'D3', 27, 41, 'laki laki', 2);
 
 -- --------------------------------------------------------
 
@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `reg_perusahaan` (
 
 INSERT INTO `reg_perusahaan` (`id_perusahaan`, `logo`, `nama`, `username`, `password`, `email`, `alamat`, `no_telp`, `fax`, `website`, `deskripsi`, `contact_person`, `level`) VALUES
 (1, 'vikky.jpg', 'vikky', 'vikky', '321', 'vikky@gmail.com', 'pasuruan', 880880880, 1222222211, 'vikky.blogspot.com', 'iki gwe perusahaan', 111111111, 0),
-(3, 'samsung.jpg', 'samsung', 'samsung', '321', 'samsung@gmail.com', 'amerika serikat', 7333922, 911922, 'samsung.co.id', 'ini perusahaan samsung', 34424224, 3),
+(3, 'samsung.png', 'samsung', 'samsung', '321', 'samsung@gmail.com', 'amerika serikat', 7333922, 911922, 'samsung.co.id', 'ini perusahaan samsung', 34424224, 3),
 (4, 'panasonic.jpg', 'panasonic', 'panasonic', '321', 'panasonic@gmail.com', 'malang', 822323223, 777777, 'panasonic.co.id', 'perusahaan panasonic', 66767, 3),
 (5, 'gojek.jpg', 'gojek', 'gojek', '321', 'gojek@app.co.id', 'sidoarjo', 92292839, 778780, 'gojek.co.id', 'perusahaan gojek', 13323343, 3);
 COMMIT;

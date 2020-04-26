@@ -14,7 +14,17 @@ class perusahaan_model extends CI_Model
         return $this->db->get_where("reg_perusahaan", array('id_perusahaan' => $id))->row();
     }
 
+    public function UpdateFile($id, $data)
+    {
+        $this->db->where('id_perusahaan', $id);
+        return $this->db->update('reg_perusahaan', $data);
+    }
 
+    function updateDataPerusahaan($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
+    }
 
     public function AddPerusahaan()
     {

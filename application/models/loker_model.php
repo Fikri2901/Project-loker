@@ -91,4 +91,13 @@ class loker_model extends CI_Model
             unlink("foto_loker/" . $_id->gambar);
         }
     }
+
+    public function GetPerusahaanJoin($id1)
+    {
+        $this->db->select('*');
+        $this->db->from('loker');
+        $this->db->join('reg_perusahaan', 'reg_perusahaan.id_perusahaan = loker.id_perusahaan', 'left');
+        $this->db->where('reg_perusahaan.id_perusahaan', $id1);
+        return $this->db->get()->result();
+    }
 }

@@ -100,7 +100,7 @@ class pelamar_model extends CI_Model
     {
 
         $config['upload_path']          = './form';
-        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['allowed_types']        = 'jpg|png|jpeg|pdf';
         $config['max_size']             = 5024;
 
         $this->load->library('upload', $config);

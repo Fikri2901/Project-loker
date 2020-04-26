@@ -5,7 +5,8 @@
       <div class="col-md-12 mb-4">
         <h2 class="h3" Info</h2> </div> <div class="w-100">
           <center>
-            <p style="font-size: xx-large"><b><?php echo $loker->nama_loker ?></b></p>
+            <h1><?= $prs[0]->nama ?> company</h1>
+            <p style="font-size: x-large"><b><?php echo $loker->nama_loker ?></b></p>
             <img class="img-fluid" src="<?php echo base_url(); ?>foto_loker/<?php echo $loker->gambar ?>" alt="" width="70%">
           </center>
       </div>

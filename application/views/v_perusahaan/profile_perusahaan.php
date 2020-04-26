@@ -16,67 +16,66 @@
       <h2 class="mb-4">Profil</h2>
     </div>
     <img src="<?= base_url(); ?>foto_perusahaan/<?= $perusahaan->logo ?>" class="rounded mx-auto d-block" width="40%">
+    <?php echo form_open_multipart('c_perusahaan/c_profile_perusahaan/editDataPerusahaan'); ?>
     <center>
       <div class="mt-2">
-        <label class="font-weight-bold" for="foto_profil">Upload Foto </label>
+        <label class="font-weight-bold" for="logo">Upload Foto </label>
         <input type="file" class="btn btn-primary" id="logo" name="logo">
       </div>
     </center><br>
+    <input type="hidden" id="id" name="id" value="<?= $perusahaan->id_perusahaan ?>">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nama">Nama Perusahaan</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="<?= $perusahaan->nama ?>">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $perusahaan->username ?>">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= $perusahaan->email ?>">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?= $perusahaan->password ?>">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="alamat">Alamat</label>
+      <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="<?= $perusahaan->alamat ?>">
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" class="form-control" id="website" name="website" placeholder="Website" value="<?= $perusahaan->website ?>">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="no_telp">No Telp</label>
+        <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="No Telp" value="<?= $perusahaan->no_telp ?>">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="fax">fax</label>
+        <input type="text" class="form-control" id="fax" name="fax" placeholder="fax" value="<?= $perusahaan->fax ?>">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="contact_person">Contact person</label>
+        <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="Contact Person" value="<?= $perusahaan->contact_person ?>">
+      </div>
 
-    <form>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="deskripsi">Deskripsi</label>
+        <textarea name="deskripsi" id="deskripsi" cols="120" rows="5" style="resize: none;"><?= $perusahaan->deskripsi ?></textarea>
+      </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="nama">Nama Perusahaan</label>
-          <input type="text" class="form-control" id="nama" name="nama" placeholder="Email" value="<?= $perusahaan->nama ?>">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?= $perusahaan->username ?>">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= $perusahaan->email ?>">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?= $perusahaan->password ?>">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="alamat">Alamat</label>
-        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="<?= $perusahaan->alamat ?>">
-      </div>
-      <div class="form-group">
-        <label for="website">Website</label>
-        <input type="text" class="form-control" id="website" name="website" placeholder="Website" value="<?= $perusahaan->website ?>">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="no_telp">No Telp</label>
-          <input type="text" class="form-control" id="no_telp" name="no_telp" placeholder="No Telp" value="<?= $perusahaan->no_telp ?>">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="fax">fax</label>
-          <input type="text" class="form-control" id="fax" name="fax" placeholder="fax" value="<?= $perusahaan->fax ?>">
-        </div>
-        <div class="form-group col-md-4">
-          <label for="contact_person">Contact person</label>
-          <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="Contact Person" value="<?= $perusahaan->contact_person ?>">
-        </div>
-
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="deskripsi">Deskripsi</label>
-          <textarea name="deskripsi" id="deskripsi" cols="120" rows="5" style="resize: none;"><?= $perusahaan->deskripsi ?></textarea>
-        </div>
-
-      </div>
-      <center>
-        <button type="submit" class="btn btn-primary mt-5">Ubah Data</button>
-      </center>
-    </form>
+    </div>
+    <center>
+      <button type="submit" class="btn btn-primary mt-5">Ubah Data</button>
+    </center>
+    <?php form_close(); ?>
 
 
 </section>
