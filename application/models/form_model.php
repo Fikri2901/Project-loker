@@ -23,4 +23,14 @@ class form_model extends CI_Model
     {
         return $this->db->get_where("form_pelamaran", array('id_form_pelamaran' => $id))->row();
     }
+
+    public function deleteForm($id)
+    {
+        $_id = $this->db->get_where('form_pelamaran', ['id_loker' => $id])->row();
+        $query = $this->db->delete('form_pelamaran', ['id_loker' => $id]);
+        if ($query) {
+            unlink("form/" . $_id->upload_cv);
+            unlink("form/" . $_id->upload_ijazah);
+        }
+    }
 }

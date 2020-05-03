@@ -68,6 +68,8 @@
             </div>
             <input type="hidden" id="id_pelamar" name="id_pelamar" class="form-control" value="<?php echo $this->session->userdata('ses_id'); ?>">
             <input type="hidden" id="id_perusahaan" name="id_perusahaan" class="form-control" value="<?php echo $loker->id_perusahaan ?>">
+            <input type="hidden" id="id_loker" name="id_loker" class="form-control" value="<?php echo $loker->id_loker ?>">
+
 
             <div class="row form-group">
               <div class="col-md-12">

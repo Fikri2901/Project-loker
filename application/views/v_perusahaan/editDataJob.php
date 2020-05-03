@@ -15,45 +15,45 @@
 
     <img src="<?= base_url(); ?>foto_loker/<?= $loker->gambar ?>" class="rounded mx-auto d-block" width="40%">
 
-    <?php echo form_open_multipart('c_perusahaan/editJob/editPosterLoker') ?>
-    <center>
-      <input type="hidden" id="idL" class="form-control" name="idL" value="<?= $loker->id_loker ?>">
-      <input type="hidden" id="nama" class="form-control" name="nama" value="<?= $loker->nama_loker ?>">
-      <div class="mt-2">
-        <label class="font-weight-bold" for="poster">Upload Poster </label>
-        <input type="file" class="btn btn-primary" id="poster" name="poster">
-        <button type="submit" class="btn btn-info">Ubah Poster</button>
-      </div>
-    </center><br>
-    <?php form_close(); ?>
+    <br>
 
 
+    <?php echo form_open_multipart('c_perusahaan/editJob/editDataLoker') ?>
     <div class="form-row">
       <div class="form-group col-md-12">
         <label for="nama_loker">Nama Loker</label>
-        <input type="text" readonly class="form-control" id="nama_loker" name="nama_loker" placeholder="Email" value="<?= $loker->nama_loker ?>">
+        <input type="text" class="form-control" id="nama_loker" name="nama_loker" placeholder="Nama" value="<?= $loker->nama_loker ?>">
       </div>
       <div class="form-group col-md-12">
         <label for="alamat">Alamat</label>
-        <input type="text" readonly class="form-control" id="alamat" name="alamat" placeholder="Username" value="<?= $loker->alamat_lkr ?>">
+        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" value="<?= $loker->alamat_lkr ?>">
       </div>
 
       <div class="form-group col-md-12">
         <label for="kategori">Kategori</label><br>
-        <input type="text" readonly class="form-control" id="alamat" name="alamat" placeholder="Username" value="<?= $loker->kategori ?>">
+        <select name="kategori" id="kategori">
+          <option value="<?= $loker->kategori ?>" hidden><?= $loker->kategori ?></option>
+          <option value="Full Time">Full Time</option>
+          <option value="Part Time"> Part Time</option>
+          <option value="Freelance"> Freelance</option>
+          <option value="magang"> magang</option>
+          <option value="Sementara"> Sementara</option>
+        </select>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="deskripsi">Deskripsi</label>
-          <textarea name="deskripsi" id="deskripsi" cols="120" rows="5" style="resize: none;" readonly><?= $loker->deskripsi ?></textarea>
+          <textarea name="deskripsi" id="deskripsi" cols="120" rows="5" style="resize: none;"><?= $loker->deskripsi ?></textarea>
         </div>
       </div>
+
+      <input type="hidden" id="id_perusahaan" name="id_perusahaan" value="<?= $loker->id_perusahaan ?>">
+      <input type="hidden" id="id" name="id" value="<?= $loker->id_loker ?>">
     </div>
     <center>
-      <!-- <button type="submit" class="btn btn-primary mt-5">Ubah Data Job</button> -->
-      <a href="<?php echo base_url(); ?>c_perusahaan/editJob/halDataLoker/<?php echo $loker->id_loker ?>" class="btn btn-primary">Edit Data</a>
+      <button type="submit" class="btn btn-primary mt-5">Ubah Data Job</button>
     </center>
-
+    <?php form_close(); ?>
 
 </section>

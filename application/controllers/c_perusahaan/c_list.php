@@ -9,6 +9,7 @@ class c_list extends CI_Controller
         parent::__construct();
 
         $this->load->model('loker_model');
+        $this->load->model('form_model');
     }
 
 
@@ -32,12 +33,11 @@ class c_list extends CI_Controller
         $this->load->view('v_perusahaan/footer');
     }
 
-    public function edit($id)
+    public function deleteLoker($id)
     {
-        $data['loker'] = $this->loker_model->GetLokerById($id);
-        $data['title'] = 'JOBBLY - Edit Job';
-        $this->load->view('v_perusahaan/header', $data);
-        $this->load->view('v_perusahaan/editJob', $data);
-        $this->load->view('v_perusahaan/footer');
+        $this->loker_model->deleteLoker($id);
+        $this->form_model->deleteForm($id);
+
+        redirect('c_perusahaan/HomePerusahaan');
     }
 }

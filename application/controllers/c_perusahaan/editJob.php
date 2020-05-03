@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class c_profile_perusahaan extends CI_Controller
+class editJob extends CI_Controller
 {
 
     public function __construct()
@@ -12,42 +12,42 @@ class c_profile_perusahaan extends CI_Controller
         $this->load->model('loker_model');
     }
 
-    public function index($id)
+    public function edit($id)
     {
-        $data['perusahaan'] = $this->perusahaan_model->GetPerusahaanById($id);
-        $data['title'] = 'JOBBLY - Profil';
+        $data['loker'] = $this->loker_model->GetLokerById($id);
+        $data['title'] = 'JOBBLY - Edit Job';
         $this->load->view('v_perusahaan/header', $data);
-        $this->load->view('v_perusahaan/profile_perusahaan', $data);
+        $this->load->view('v_perusahaan/editJob', $data);
         $this->load->view('v_perusahaan/footer');
     }
 
-    public function HalEditData($id)
+    public function halDataLoker($id)
     {
-        $data['perusahaan'] = $this->perusahaan_model->GetPerusahaanById($id);
-        $data['title'] = 'JOBBLY - Data Profil';
+        $data['loker'] = $this->loker_model->GetLokerById($id);
+        $data['title'] = 'JOBBLY - Edit Data Job';
         $this->load->view('v_perusahaan/header', $data);
-        $this->load->view('v_perusahaan/profileData_perusahaan', $data);
+        $this->load->view('v_perusahaan/editDataJob', $data);
         $this->load->view('v_perusahaan/footer');
     }
 
-    function editDataLogoP()
+    public function editPosterLoker()
     {
-        $id = $this->input->post('idP');
-        $data1 = $this->perusahaan_model->GetPerusahaanById($id);
-        $nama = './foto_perusahaan/' . $data1->logo;
+        $id = $this->input->post('idL');
+        $data2 = $this->loker_model->GetLokerById($id);
+        $nama = './foto_loker/ ' . $data2->gambar;
 
         if (is_readable($nama) && unlink($nama)) {
 
-            $foto = $this->input->post('namaP');
+            $foto = $this->input->post('nama');
 
-            $config['upload_path']          = './foto_perusahaan/';
+            $config['upload_path']          = './foto_loker/';
             $config['allowed_types']        = 'jpg|png|jpeg';
             $config['max_size']             = 5024;
             $config['file_name']            = $foto;
 
             $this->load->library('upload', $config);
 
-            if (!$this->upload->do_upload('logo')) {
+            if (!$this->upload->do_upload('poster')) {
                 $error =  $this->upload->display_errors();
                 echo $error;
             } else {
@@ -55,17 +55,16 @@ class c_profile_perusahaan extends CI_Controller
                 $upload_data = $this->upload->data();
                 $file_name = $upload_data['file_name'];
 
-                $data = array(
-                    'logo' => $file_name
+                $data1 = array(
+                    'gambar' => $file_name
                 );
             }
 
             $where = array(
-                'id_perusahaan' => $id
+                'id_loker' => $id
             );
 
-            $this->perusahaan_model->updateDataPerusahaan($where, $data, 'reg_perusahaan');
-
+            $this->loker_model->updateDataLoker($where, $data1, 'loker');
 
             $data['loker'] = $this->loker_model->GetLoker()->result();
             $data['title'] = 'JOBBLY - Home';
@@ -75,30 +74,23 @@ class c_profile_perusahaan extends CI_Controller
         }
     }
 
-    public function editDataPerusahaan()
+    public function editDataLoker()
     {
-
         $id = $this->input->post('id');
 
         $data = array(
-            'nama' => $this->input->post('nama'),
-            'username' => $this->input->post('username'),
-            'password' => $this->input->post('password'),
-            'email' => $this->input->post('email'),
-            'alamat' => $this->input->post('alamat'),
-            'no_telp' => $this->input->post('no_telp'),
-            'fax' => $this->input->post('fax'),
-            'website' => $this->input->post('website'),
+            'nama_loker' => $this->input->post('nama_loker'),
+            'alamat_lkr' => $this->input->post('alamat'),
             'deskripsi' => $this->input->post('deskripsi'),
-            'contact_person' => $this->input->post('contact_person'),
-            'level' => 3
+            'kategori' => $this->input->post('kategori'),
+            'id_perusahaan' => $this->input->post('id_perusahaan')
         );
 
         $where = array(
-            'id_perusahaan' => $id
+            'id_loker' => $id
         );
 
-        $this->perusahaan_model->updateDataPerusahaan($where, $data, 'reg_perusahaan');
+        $this->loker_model->updateDataLoker($where, $data, 'loker');
 
         $data['loker'] = $this->loker_model->GetLoker()->result();
         $data['title'] = 'JOBBLY - Home';

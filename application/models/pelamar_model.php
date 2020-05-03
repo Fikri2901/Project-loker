@@ -128,7 +128,8 @@ class pelamar_model extends CI_Model
             'upload_cv' => $file_name1,
             'upload_ijazah' => $file_name2,
             'id_pelamar' => $this->input->post('id_pelamar'),
-            'id_perusahaan' => $this->input->post('id_perusahaan')
+            'id_perusahaan' => $this->input->post('id_perusahaan'),
+            'id_loker' => $this->input->post('id_loker')
         );
 
         $this->db->insert('form_pelamaran', $data);

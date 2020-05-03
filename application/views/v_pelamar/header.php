@@ -54,7 +54,6 @@
                 </ul>
             </div>
         </div>
+
     </nav>
     <!-- END nav -->
-
-    <!--    <a href="<?php echo site_url($link); ?>">link ini</a>-->

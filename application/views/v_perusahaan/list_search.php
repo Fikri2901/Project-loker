@@ -30,7 +30,7 @@
 									<div class="col-md mr-md-2">
 										<div class="form-group">
 											<div class="form-field">
-												<input type="text" name="keyword" class="form-control" placeholder="Cari Pekerjaan">
+												<input type="text" name="keyword" class="form-control" placeholder="Cari Semua Pekerjaan">
 											</div>
 										</div>
 									</div>
@@ -78,9 +78,6 @@
 									</div>
 								</div>
 
-								<div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-									<a href="#" class="btn btn-primary py-2">Apply Job</a>
-								</div>
 							</div>
 						</div><!-- end -->
 					<?php } ?>
