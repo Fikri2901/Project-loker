@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Apr 2020 pada 15.50
+-- Waktu pembuatan: 03 Bulan Mei 2020 pada 16.01
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -66,18 +66,20 @@ CREATE TABLE IF NOT EXISTS `form_pelamaran` (
   `upload_ijazah` varchar(50) NOT NULL,
   `id_pelamar` int(11) NOT NULL,
   `id_perusahaan` int(11) NOT NULL,
+  `id_loker` int(11) NOT NULL,
   PRIMARY KEY (`id_form_pelamaran`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `form_pelamaran`
 --
 
-INSERT INTO `form_pelamaran` (`id_form_pelamaran`, `nama_pekerjaan`, `nama_lengkap`, `alamat_f`, `no_telp_f`, `email_f`, `alasan`, `upload_cv`, `upload_ijazah`, `id_pelamar`, `id_perusahaan`) VALUES
-(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', 'karena saya ingin bekerja', 'cv.jpg', 'ijasah.jpg', 13, 3),
-(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', 'karena saya ingin membahagiakan orang tua saya', 'cv1.jpg', 'ijasah1.jpg', 1, 3),
-(6, 'Programmer', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin dapat duit sendiri', 'cv2.jpg', 'ijasah2.jpg', 14, 4),
-(7, 'System Administrator', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin menambah wawasan dalam pekerjaan ini', 'cv3.jpg', 'ijasah3.jpg', 14, 5);
+INSERT INTO `form_pelamaran` (`id_form_pelamaran`, `nama_pekerjaan`, `nama_lengkap`, `alamat_f`, `no_telp_f`, `email_f`, `alasan`, `upload_cv`, `upload_ijazah`, `id_pelamar`, `id_perusahaan`, `id_loker`) VALUES
+(3, 'Education & Training', 'fikri', 'pasuruan', 888811181, 'fikri@gmail.com', 'karena saya ingin bekerja', 'cv.jpg', 'ijasah.jpg', 13, 3, 5),
+(4, 'Education & Training', 'ega', 'bojonegoro', 88888888, 'ega@gmail.com', 'karena saya ingin membahagiakan orang tua saya', 'cv1.jpg', 'ijasah1.jpg', 1, 3, 5),
+(6, 'Programmer', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin dapat duit sendiri', 'cv2.jpg', 'ijasah2.jpg', 14, 4, 1),
+(7, 'System Administrator', 'viki', 'pasuruan , jl.MT HARYONO', 2222222, 'viki@gmail.com', 'karena saya ingin menambah wawasan dalam pekerjaan ini', 'cv3.jpg', 'ijasah3.jpg', 14, 5, 11),
+(8, 'Software developer', 'mukti', 'bojonegoro', 22222222, 'mukti@gmail.com', 'karena ingin dapat uang', 'cv5.jpg', 'ijasah4.jpg', 12, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -95,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `loker` (
   `kategori` varchar(50) NOT NULL,
   `id_perusahaan` int(11) NOT NULL,
   PRIMARY KEY (`id_loker`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `loker`
@@ -107,14 +109,14 @@ INSERT INTO `loker` (`id_loker`, `nama_loker`, `gambar`, `alamat_lkr`, `deskrips
 (3, 'Software developer', 'Software_developer.jpeg', 'jember', 'sosial human', 'full time', 4),
 (4, 'Developer website', 'Developer_website.jpg', 'sidoarjo', 'pengelola data basis', 'part time', 3),
 (5, 'Education & Training', 'Education_&_Training.jpg', 'malang', 'pelatihan', 'part time', 3),
-(6, 'IT support', 'IT_support.jpg', 'mojokerto', 'memimpin project', 'full time', 5),
 (7, 'Guru komputer', 'Guru_komputer.jpg', 'surabaya', 'membuat program', 'magang', 5),
 (8, 'Designer', 'Designer.jpeg', 'malang', 'pemasaran', 'freelance', 4),
 (9, 'Project manager', 'Project_manager.jpeg', 'probolinggo', 'manager', 'part time', 3),
 (11, 'System Administrator', 'System_Administrator.jpg', 'PLN pusat surabaya', 'Minimal D3 Teknik Informatika, laki-laki minimal 20 thn.', 'part time', 5),
 (12, 'Design Banner', 'Design_Banner.jpg', 'surabaya', 'ini design banner', 'Part Time', 3),
 (13, 'Design stiker', 'Design_stiker.jpg', 'bangil', 'ini design stiker', 'Sementara', 3),
-(14, 'program', 'program.jpg', 'malang', 'daaaa', 'Freelance', 3);
+(14, 'program', 'program.jpg', 'malang', 'daaaa', 'Freelance', 3),
+(15, 'egaaaa', 'egaaaa.jpeg', 'bjn', 'specification', 'Full Time', 4);
 
 -- --------------------------------------------------------
 
