@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="alamat">Alamat</label>
-            <textarea class="form-control" id="alamat" rows="3" name="alamat"><?php echo $lkr->alamat ?></textarea>
+            <textarea class="form-control" id="alamat" rows="3" name="alamat"><?php echo $lkr->alamat_lkr ?></textarea>
         </div>
         <div class="form-group">
             <label for="deskripsi">Deskripsi</label>
@@ -46,6 +46,10 @@
             </select>
         </div>
 
+        <div class="form-group">
+            <label for="nama_loker">Id Perusahaan</label>
+            <input type="teks" class="form-control" id="id_perusahaan" name="id_perusahaan" value="<?php echo $lkr->id_perusahaan ?>">
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <!-- </form> -->

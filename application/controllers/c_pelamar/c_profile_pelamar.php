@@ -38,7 +38,6 @@ class c_profile_pelamar extends CI_Controller
         $data1 = $this->pelamar_model->GetPelamarById($id);
         $nama = './foto_pelamar/' . $data1->foto_profil;
 
-        // if ($nama != null) {
         if (is_readable($nama) && unlink($nama)) {
 
             $foto = $this->input->post('namaP');

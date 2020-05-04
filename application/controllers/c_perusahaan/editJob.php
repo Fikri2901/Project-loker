@@ -33,16 +33,16 @@ class editJob extends CI_Controller
     public function editPosterLoker()
     {
         $id = $this->input->post('idL');
-        $data2 = $this->loker_model->GetLokerById($id);
-        $nama = './foto_loker/ ' . $data2->gambar;
+        $data = $this->loker_model->GetLokerById($id);
+        $nama = './foto_loker/' . $data->gambar;
 
         if (is_readable($nama) && unlink($nama)) {
 
             $foto = $this->input->post('nama');
 
-            $config['upload_path']          = './foto_loker/';
+            $config['upload_path']          = './foto_loker';
             $config['allowed_types']        = 'jpg|png|jpeg';
-            $config['max_size']             = 5024;
+            $config['max_size']             = 5028;
             $config['file_name']            = $foto;
 
             $this->load->library('upload', $config);
@@ -55,7 +55,7 @@ class editJob extends CI_Controller
                 $upload_data = $this->upload->data();
                 $file_name = $upload_data['file_name'];
 
-                $data1 = array(
+                $data = array(
                     'gambar' => $file_name
                 );
             }
@@ -64,7 +64,7 @@ class editJob extends CI_Controller
                 'id_loker' => $id
             );
 
-            $this->loker_model->updateDataLoker($where, $data1, 'loker');
+            $this->loker_model->updateDataLoker($where, $data, 'loker');
 
             $data['loker'] = $this->loker_model->GetLoker()->result();
             $data['title'] = 'JOBBLY - Home';

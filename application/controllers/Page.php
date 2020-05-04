@@ -297,7 +297,8 @@ class Page extends CI_Controller
         'nama_loker' => $this->input->post('nama_loker'),
         'alamat' => $this->input->post('alamat'),
         'deskripsi' => $this->input->post('deskripsi'),
-        'kategori' => $this->input->post('kategori')
+        'kategori' => $this->input->post('kategori'),
+        'id_perusahaan' => $this->input->post('id_perusahaan')
       );
 
       $where = array(

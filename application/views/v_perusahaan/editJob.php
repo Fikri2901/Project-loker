@@ -22,10 +22,12 @@
       <div class="mt-2">
         <label class="font-weight-bold" for="poster">Upload Poster </label>
         <input type="file" class="btn btn-primary" id="poster" name="poster">
-        <button type="submit" class="btn btn-info">Ubah Poster</button>
+        <button type="submit" class="btn btn-info" name="ubah">Ubah Poster</button>
       </div>
-    </center><br>
-    <?php form_close(); ?>
+    </center>
+    <?php echo form_close(); ?>
+
+    <br>
 
 
     <div class="form-row">
